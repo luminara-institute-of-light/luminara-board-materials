@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  doc-page{font-family:'Source Serif 4',Georgia,serif;}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
+  a{color:#0E398F;text-decoration-color:#F4BE3B;} a:hover{color:#030F58;}
+  p,li{orphans:3;widows:3;}
+  .task{break-inside:avoid;display:grid;grid-template-columns:22px 1fr;gap:10px;padding:9px 0;border-bottom:1px solid #dcdff0;}
+  .box{width:15px;height:15px;border:1.5px solid #0E398F;margin-top:2px;}
+  .who{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A86C17;}
+</style>
+</helmet>
+<doc-page margin="0.85in">
+  <div style="border-bottom:3px double #F4BE3B;padding-bottom:16px;margin-bottom:24px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:18px;height:34px">
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#0E398F;margin-bottom:8px;white-space:nowrap">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;margin:-4px 0 8px">Companion to the Infrastructure Benchmark</div>
+    <h1 style="font-size:29px;line-height:1.2;font-weight:700;margin:0 0 8px">Build-Days Checklist</h1>
+    <p style="font-size:14px;margin:0;color:#3a4370">Everything from the benchmark's "to close" boxes, sequenced into a few working days. Owner abbreviations: <strong>GOV</strong> = governors of record (Furness, Nilsen) · <strong>BRD</strong> = new board once elected · <strong>SEC</strong> = secretary · <strong>TRE</strong> = treasurer · <strong>B&amp;O</strong> = Branding &amp; Outreach (Alley) · <strong>WEB</strong> = website lead.</p>
+  </div>
+
+  <h2 style="font-size:19px;font-weight:700;margin:0 0 2px"><span style="color:#A86C17">Day 0 ·</span> Prepare the papers <span style="font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:#3a4370">· nothing here needs a vote; all of it makes Day 1 a one-sitting meeting</span></h2>
+  <div class="task"><div class="box"></div><div><strong>Resolve every bylaws bracket to a recommendation.</strong> Work from BYLAWS-OPEN-ITEMS; attach a one-line rationale each. Decide the membership recommendation: board-governed, "member" as community title, no voting class. <div class="who">GOV + B&amp;O</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Draft the organizational-meeting agenda and resolutions.</strong> Adopt bylaws · elect the nine-member board · elect officers · adopt conflict-of-interest policy · adopt financial-controls policy · set fiscal year · authorize bank account and signers · ratify Programs and interim leads · assign HeartBeam a single accountable Program · adopt member-intake path · adopt records-retention policy. One resolution each, pre-written. <div class="who">GOV + SEC</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Draft the two policies.</strong> Conflict of interest (IRS Form 1023 sample is the accepted base). Financial controls, one page: dual approval over $500; treasurer reconciles, never disburses; ledger from first dollar; budget-vs-actual on every board agenda. <div class="who">TRE</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Draft the VWS fiscal-sponsorship agreement.</strong> Fund name, admin fee, sponsor discretion-and-control clause, reporting, and termination terms (asset transfer, notice period, grant reassignment). Send to VWS ahead of Day 2. <div class="who">GOV</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Deposit the EIN letter and bank paperwork in the records set</strong> alongside the filed incorporation documents. <div class="who">TRE</div></div></div>
+
+  <h2 style="font-size:19px;font-weight:700;margin:26px 0 2px"><span style="color:#A86C17">Day 1 ·</span> The organizational meeting <span style="font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:600;color:#3a4370">· the root gap closes here</span></h2>
+  <div class="task"><div class="box"></div><div><strong>If the board vote already happened: retrieve, sign, and file the minutes:</strong> confirm they cover bylaws adoption and officer elections; anything missed becomes a ratification item. If not: convene the two governors and run the agenda (remote is valid; email notice is valid, per RCW 24.03A defaults). <div class="who">GOV + SEC</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Adopt bylaws; elect the board; elect officers.</strong> Chair signs the bylaws, secretary attests, adoption date recorded. <div class="who">GOV → BRD</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Pass the remaining pre-written resolutions</strong> (policies, fiscal year, bank, programs, leads, HeartBeam owner, intake, retention). <div class="who">BRD</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Minutes finalized and signed within 24 hours;</strong> deposited as the first item in the corporate-records drive. Conflict-of-interest disclosure forms collected from all nine. <div class="who">SEC</div></div></div>
+
+  <h2 style="font-size:19px;font-weight:700;margin:26px 0 2px;break-before:page"><span style="color:#A86C17">Day 2 ·</span> Money and filings</h2>
+  <div class="task"><div class="box"></div><div><strong>Align the existing bank account with the record:</strong> confirm it's under the exact legal name (no ", Inc.") and EIN, and that its signers match a board resolution; pass the ratifying resolution if none exists. Apply the dual-approval threshold to it. <div class="who">TRE</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Sign the VWS sponsorship agreement:</strong> both boards. Until the 501(c)(3) determination arrives, every donation surface states gifts are received via the Virtual World Society. <div class="who">GOV + VWS</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Set the 501(c)(3) timeline.</strong> Form 1023 filing target date; WA charitable-solicitation registration (Secretary of State Charities Program) filed before public fundraising; sponsorship exit date pencilled 6–12 months out. <div class="who">BRD</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Start the ledger.</strong> Accounting software live, make-a-thon and event spending entered retroactively, first budget-vs-actual scheduled for the next board meeting. <div class="who">TRE</div></div></div>
+
+  <h2 style="font-size:19px;font-weight:700;margin:26px 0 2px"><span style="color:#A86C17">Day 3 ·</span> Records, identity, claims</h2>
+  <div class="task"><div class="box"></div><div><strong>Stand up the corporate-records shared drive</strong> in the org Workspace (shared drive, not My Drive). Deposit: Articles, certificate, initial report, EIN letter, adopted bylaws, minutes, policies, sponsorship agreement. Vault stays the working mirror. <div class="who">SEC + B&amp;O</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Cut outbound mail over to @luminara.institute;</strong> lightschool@virtualworldsociety.org becomes a monitored forward. Signature blocks updated org-wide. <div class="who">WEB</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Fix the website in one pass:</strong> program names per the style sheet; "Lingua Lumina" → Lumina Lingua; footer year and attribution updated per the sponsorship agreement; "formerly The Light School" bridge line where lineage matters; charter page relabeled as the CODEX discussion draft until a short charter is ratified. <div class="who">WEB + B&amp;O</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Finish the therapeutic-claims sweep:</strong> remaining program work plans plus every live site page, before any website copy is reused. Aspirational framing replaces outcome claims: "designed to support," never "heals." <div class="who">B&amp;O + Research lead</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Open the claims register:</strong> one row per public health-adjacent statement → evidence tier → status. New public copy routes through one named reviewer (CODEX §20 made operational). <div class="who">Research lead</div></div></div>
+
+  <h2 style="font-size:19px;font-weight:700;margin:26px 0 2px"><span style="color:#A86C17">Standing ·</span> The cadence that keeps it to standard</h2>
+  <div class="task"><div class="box"></div><div><strong>Board meets on a fixed cadence</strong> (monthly while forming; the 4th-Tuesday Bridge slot is the natural home). Minutes within a week, filed in the records drive. <div class="who">SEC</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Budget-vs-actual on every agenda;</strong> quarterly financials to the full board; annual property inventory. <div class="who">TRE</div></div></div>
+  <div class="task"><div class="box"></div><div><strong>Annual report to WA SOS each year;</strong> bylaws review on a two-year cycle; CODEX review cadence per its own §51. <div class="who">SEC</div></div></div>
+  <div class="task" style="border-bottom:none"><div class="box"></div><div><strong>Consortium and IP terms written before the first partner or prototype ships:</strong> membership agreement pattern (Media Lab lesson) and IP-ownership policy (Bell Labs / PARC lesson). <div class="who">BRD</div></div></div>
+</doc-page>
+</x-dc>
+</body>
+</html>

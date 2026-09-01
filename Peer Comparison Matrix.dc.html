@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  doc-page{font-family:'Source Serif 4',Georgia,serif;}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
+  a{color:#0E398F;text-decoration-color:#F4BE3B;} a:hover{color:#030F58;}
+  p,li,td{orphans:3;widows:3;}
+  th{text-align:left;font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#0E398F;padding:6px 8px;border-bottom:1.5px solid #111a4a;vertical-align:bottom;}
+  td{font-size:11.5px;line-height:1.45;padding:7px 8px;border-bottom:1px solid #dcdff0;vertical-align:top;}
+  td.dim{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:11px;color:#111a4a;}
+  td.lum{background:#FBF6E3;border-left:2px solid #F4BE3B;}
+</style>
+</helmet>
+<doc-page orientation="landscape" margin="0.6in">
+  <div style="border-bottom:3px double #F4BE3B;padding-bottom:12px;margin-bottom:16px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:18px;height:34px">
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#0E398F;margin-bottom:8px;white-space:nowrap">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;margin:-4px 0 8px">Companion to the Infrastructure Benchmark</div>
+    <h1 style="font-size:24px;line-height:1.2;font-weight:700;margin:0 0 6px">Peer Comparison Matrix</h1>
+    <p style="font-size:12.5px;margin:0;color:#3a4370">How the organizations Luminara's own CODEX cites as precedents structure the six infrastructure dimensions, and the standard Luminara should adopt in each. Gold column = the recommendation.</p>
+  </div>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr>
+      <th style="width:11%">Dimension</th>
+      <th>Santa Fe Institute</th>
+      <th>MIT Media Lab</th>
+      <th>IONS</th>
+      <th>Mind &amp; Life</th>
+      <th>Esalen</th>
+      <th>Bell Labs / PARC</th>
+      <th>HIT Lab (Furness)</th>
+      <th style="color:#A86C17">Standard for Luminara</th>
+    </tr></thead>
+    <tbody>
+      <tr>
+        <td class="dim">Governance</td>
+        <td>Independent 501(c)(3); lean fiduciary board + separate science board for intellectual direction</td>
+        <td>University-owned: governance inherited from MIT; lab director accountable upward</td>
+        <td>Independent 501(c)(3); conventional board of directors, decades of continuity</td>
+        <td>Independent 501(c)(3); board pairs contemplatives with academics</td>
+        <td>Reformed late: professional board and controls added after credibility damage</td>
+        <td>Corporate parent governed; research got autonomy, not governance</td>
+        <td>University lab: consortium advisory, university held governance</td>
+        <td class="lum">Elect the 9-member board now; small fiduciary core, advisory circle separate (CODEX's own model)</td>
+      </tr>
+      <tr>
+        <td class="dim">Community &amp; membership</td>
+        <td>External faculty and visiting researchers: prestigious, non-voting; community is program</td>
+        <td>Students and member-company researchers; no voting membership</td>
+        <td>Large public membership as supporters, not governors</td>
+        <td>Fellows and grantees; community by selection, board governs</td>
+        <td>Workshop community; participation never conferred governance</td>
+        <td>Employees only</td>
+        <td>Consortium members advised; university governed</td>
+        <td class="lum">Board-governed; "member" as community title with documented intake; no voting class in bylaws</td>
+      </tr>
+      <tr>
+        <td class="dim">Funding model</td>
+        <td>Philanthropy + grants + endowment; diversified early</td>
+        <td>Consortium: standardized membership terms, one pattern for all companies</td>
+        <td>Donations, membership, grants; sustained 50+ years</td>
+        <td>Philanthropy + program revenue + grants</td>
+        <td>Program/workshop revenue: concentration proved fragile</td>
+        <td>Single corporate patron: powerful until the patron wavered</td>
+        <td>Industry consortium fees + research contracts</td>
+        <td class="lum">FS agreement papered now; 1023 timeline set; Consortium of Light terms written before first partner signs</td>
+      </tr>
+      <tr>
+        <td class="dim">Claims discipline</td>
+        <td>Publishes methods; complexity framed as open science</td>
+        <td>Demo culture ("demo or die") with academic publication behind it</td>
+        <td>Research framed as inquiry with published methods; never marketed as therapy</td>
+        <td>Every contemplative program paired with named academic collaborators and peer-reviewed output</td>
+        <td>Cautionary: outcome language outran evidence for decades</td>
+        <td>Engineering claims tied to shipped artifacts</td>
+        <td>Peer-reviewed HCI research</td>
+        <td class="lum">Claims register + one named reviewer; aspirational framing house style; finish the sweep before reusing site copy (FTC 2022 standard)</td>
+      </tr>
+      <tr>
+        <td class="dim">IP &amp; commercialization</td>
+        <td>Ideas open; books and education carry the brand</td>
+        <td>Member companies license lab output under consortium terms set up front</td>
+        <td>Research instruments and publications; no licensing engine</td>
+        <td>Grants tied to academic output; no commercial arm</td>
+        <td>Brand and retreats are the asset; IP incidental</td>
+        <td>Transistor, Ethernet, GUI: invented value captured by others; the canonical lesson in planning commercialization paths</td>
+        <td>Spun 25+ companies from lab research; licensing through the university</td>
+        <td class="lum">IP-ownership policy adopted before the first prototype ships; licensable platforms (CODEX §40) under board-set terms</td>
+      </tr>
+      <tr>
+        <td class="dim">Identity &amp; records</td>
+        <td>One name since 1984; archives professionally kept</td>
+        <td>One brand under MIT; institutional records inherited</td>
+        <td>Renamed once (from early era) and kept the lineage visible for years</td>
+        <td>One name since 1991; dialogues archived and published</td>
+        <td>Continuous name; reputation, not records, was the weak point</td>
+        <td>Corporate records regime</td>
+        <td>Lab identity survived director transitions via consortium continuity</td>
+        <td class="lum">Complete The Light School → Luminara cutover in one pass; corporate-records shared drive; "formerly The Light School" bridge line for 1–2 years</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:11px;line-height:1.55;color:#3a4370;margin:14px 0 0">Peer characterizations are benchmark-level summaries drawn from public records and each organization's published history, keyed to the lessons Luminara's CODEX §46 itself assigns them. Gold column items are the recommendations argued in the Infrastructure Benchmark report, sections 1–7.</p>
+
+  <h2 style="font-size:20px;font-weight:700;margin:0 0 4px;break-before:page">Extended peer field</h2>
+  <p style="font-size:12.5px;line-height:1.55;color:#3a4370;margin:0 0 14px">Three to four comparables for <strong>each</strong> of the seven core organizations, drawn from public filings, GuideStar and Charity Navigator records, and each organization's published governance material: the strongest organizations in our field. The "take" column is what Luminara should copy or avoid, specifically.</p>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of the Santa Fe Institute · Independent idea institutes</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Institute for Advanced Study<br><span style="font-weight:400;color:#3a4370">1930 · independent · Princeton, NJ</span></td><td>The original independent institute: endowed at founding, no degrees, no labs: permanent faculty plus rotating visiting members.</td><td>The purest case for endowment-first fundraising: independence is bought up front or negotiated forever after.</td></tr>
+      <tr><td class="dim">Perimeter Institute<br><span style="font-weight:400;color:#3a4370">1999 · independent charity · Waterloo, Canada</span></td><td>Founded on one anchor donor (Mike Lazaridis) then deliberately diversified with matching government funds; public lectures made theoretical physics a civic brand.</td><td>The anchor-donor playbook: convert one founder's gift into matched public and philanthropic money before dependence sets in, and use free public lectures as the brand engine.</td></tr>
+      <tr><td class="dim">Salk Institute<br><span style="font-weight:400;color:#3a4370">1960 · 501(c)(3) · La Jolla, CA</span></td><td>Founder-scientist's name and an architectural icon fused into a permanent identity; governed by a conventional independent board.</td><td>A founder's story and a physical/visual icon can carry an institute's identity for decades; Luminara's light iconography can play the same role if used with Salk-level consistency.</td></tr>
+      <tr><td class="dim">Complexity Science Hub<br><span style="font-weight:400;color:#3a4370">2015 · association · Vienna</span></td><td>Young SFI-analog built as a member association of universities and agencies pooling funds; grew credibility fast by publishing prolifically under one visual identity.</td><td>The fast-start version of SFI: institutional members instead of one patron, and output volume as the credibility strategy.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of the MIT Media Lab · Creative technology labs</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Stanford HAI<br><span style="font-weight:400;color:#3a4370">2019 · university institute · Stanford</span></td><td>Human-centered AI institute launched with named co-directors, a corporate affiliates program, and a policy voice from day one.</td><td>How to launch loud: named leadership pairing (scientist + humanist), an affiliates program with published tiers, and one clear editorial line: technology in service of humanity.</td></tr>
+      <tr><td class="dim">CMU Entertainment Technology Center<br><span style="font-weight:400;color:#3a4370">1998 · university center · Pittsburgh</span></td><td>Two-department joint venture (drama + computer science) built around project-based cohorts and industry-sponsored student projects.</td><td>The cohort-plus-sponsored-project mechanic is a working model for the Soulship Academy: real clients, real deliverables, tuition-adjacent funding.</td></tr>
+      <tr><td class="dim">Georgia Tech GVU Center<br><span style="font-weight:400;color:#3a4370">1992 · university center · Atlanta</span></td><td>Umbrella center federating dozens of HCI labs under one brand, seed-grant program, and shared showcase events.</td><td>The federation pattern for Luminara's six divisions: one brand, small seed grants, and a recurring all-hands showcase to keep units coherent.</td></tr>
+      <tr><td class="dim">Ars Electronica Futurelab<br><span style="font-weight:400;color:#3a4370">1996 · lab of a civic institution · Linz, Austria</span></td><td>Art-technology lab funded by a city-owned cultural institution; sustains itself through commissioned "future sketches" for industry partners.</td><td>Commissioned experiential work as mission-aligned revenue: the model for Experience Architecture selling transformative installations without becoming an agency.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of IONS · Frontier consciousness research</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">HeartMath Institute<br><span style="font-weight:400;color:#3a4370">1991 · 501(c)(3) · Boulder Creek, CA</span></td><td>The direct HeartBeam analog: heart-coherence and interconnectivity research, first study published in the American Journal of Cardiology (1995), 80+ peer-reviewed studies since; research arm feeds a training/certification ecosystem (12,000+ certified practitioners) and a Global Coherence Initiative with citizen-science sensor networks.</td><td>Thirty years of exactly Luminara's subject matter without an FTC action: every tool traces to a published study, and the commercial arm (HeartMath LLC) is a separate entity from the research nonprofit. Structure HeartBeam's evidence base and any future revenue the same way.</td></tr>
+      <tr><td class="dim">The Monroe Institute<br><span style="font-weight:400;color:#3a4370">1971 · 501(c)(3) · VA</span></td><td>Consciousness-exploration retreats + research affiliation; Charity Navigator four stars with a fully independent board and an 86% program-expense ratio; publishes annual reports and financials on its own site.</td><td>Even frontier subject matter can score perfect accountability marks: independent board, public financials, formal annual reporting. Adopt the transparency posture early; it's what lets unusual missions bank mainstream trust.</td></tr>
+      <tr><td class="dim">UVA Division of Perceptual Studies<br><span style="font-weight:400;color:#3a4370">1967 · university unit · Charlottesville</span></td><td>Frontier consciousness research housed inside a medical school for six decades, sustained by dedicated endowed gifts and meticulous case archives.</td><td>The longest-lived proof that unconventional questions survive inside mainstream institutions when the methods are conservative and the records immaculate.</td></tr>
+      <tr><td class="dim">Rhine Research Center<br><span style="font-weight:400;color:#3a4370">1935, independent since 1965 · 501(c)(3) · Durham, NC</span></td><td>Spun out of Duke when the university moved on; survived as a small independent nonprofit on membership, education programs, and bequests.</td><td>The sponsorship-exit precedent from Luminara's own field: the spin-out survives when it leaves with its library, its list, and its programs intact.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of Mind &amp; Life · Contemplative science bridges</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Center for Healthy Minds<br><span style="font-weight:400;color:#3a4370">2008 · university center + nonprofit arm · UW–Madison</span></td><td>Richard Davidson's wellbeing-science center paired with a separate nonprofit (Healthy Minds Innovations) that ships the app and trainings.</td><td>The cleanest modern split of research entity and product entity in Luminara's subject area: the structural answer for HeartBeam's app future.</td></tr>
+      <tr><td class="dim">Greater Good Science Center<br><span style="font-weight:400;color:#3a4370">2001 · university center · UC Berkeley</span></td><td>Turned the science of compassion and awe into a media brand (magazine, podcasts, free courses) that funds and popularizes the research.</td><td>The content-engine model: translation of research into free public media is itself a funding and recognition strategy.</td></tr>
+      <tr><td class="dim">Contemplative Sciences Center<br><span style="font-weight:400;color:#3a4370">2012 · university center · UVA</span></td><td>Anchor-donor-founded center that grew from programs into a dedicated building and student-facing curriculum.</td><td>Anchor gift → programs → permanent home is a sequence, not a single ask; Luminara's facility ambitions should be staged the same way.</td></tr>
+      <tr><td class="dim">Center for Contemplative Mind in Society<br><span style="font-weight:400;color:#3a4370">1997 · 501(c)(3) · MA</span></td><td>Small nonprofit that seeded contemplative practice across professions through fellowships and an academic association.</td><td>Leverage without scale: a fellowship program and an association can spread a practice field-wide with a tiny staff.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of Esalen · Human-potential learning centers</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Omega Institute<br><span style="font-weight:400;color:#3a4370">1977 · 501(c)(3) · Rhinebeck, NY</span></td><td>The largest holistic-studies education nonprofit; its GuideStar governance profile checks every BoardSource box: formal board orientation, signed role agreements, annual CEO assessment, annual conflict-of-interest disclosure by board and senior staff.</td><td>A literal checklist of the governance hygiene Luminara's board should adopt at its first annual cycle: orientation, signed expectations, CEO review, annual COI re-disclosure.</td></tr>
+      <tr><td class="dim">Garrison Institute<br><span style="font-weight:400;color:#3a4370">2003 · 501(c)(3) · Garrison, NY</span></td><td>Nonsectarian contemplative institute applying practice + science to social and environmental problems; founder-led board (Rose family co-chairs) with named outside directors; programs organized as long-running initiatives (Climate, Mind &amp; Behavior).</td><td>Founder-led governance works when outside directors are real and programs are named, multi-year initiatives; a model for keeping Furness's founding vision while the board matures.</td></tr>
+      <tr><td class="dim">Kripalu Center<br><span style="font-weight:400;color:#3a4370">nonprofit center since 1983 · Stockbridge, MA</span></td><td>Survived a founder crisis by converting from guru-centered community to professionally governed education nonprofit; now the largest retreat center in North America.</td><td>The governance conversion story: charisma-founded communities endure by institutionalizing before the founder transition, not after.</td></tr>
+      <tr><td class="dim">1440 Multiversity<br><span style="font-weight:400;color:#3a4370">2017 · 501(c)(3) · Scotts Valley, CA</span></td><td>New-generation learning campus, philanthropically built, that launched with corporate learning partnerships alongside public programs.</td><td>The modern launch playbook for a learning campus: anchor philanthropy plus employer partnerships from day one.</td></tr>
+      <tr><td class="dim">Naropa University<br><span style="font-weight:400;color:#3a4370">1974 · accredited university · Boulder, CO</span></td><td>Contemplative education institution that pursued full accreditation, trading flexibility for durable legitimacy and degree-granting authority.</td><td>The far end of the Academy's path: accreditation is available to contemplative education, at the price of years of institutional discipline.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of Bell Labs &amp; Xerox PARC · Mission research at scale</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Allen Institute<br><span style="font-weight:400;color:#3a4370">2003 · 501(c)(3) · Seattle</span></td><td>Philanthropy-endowed bioscience institute (~825 staff) built on open science: all data and resources public; grew by adding divisions (Brain 2003, Cell 2014, Immunology 2018) under one roof; describes its model as for-profit operational discipline in service of a founding vision.</td><td>Luminara's nearest world-class neighbor and a natural partner target. Two takes: open-by-default research output as a trust engine, and division growth under one legal entity rather than entity sprawl.</td></tr>
+      <tr><td class="dim">Allen Institute for AI (Ai2)<br><span style="font-weight:400;color:#3a4370">2014 · separate 501(c)(3) · Seattle</span></td><td>Deliberately a distinct corporation from the Allen Institute, with its own board mixing the founder's trust, UW's president, venture and industry figures.</td><td>The counterpoint to entity sprawl: spin out a separate entity only when mission and funding genuinely diverge, and seat the board with institutional heavyweights when you do.</td></tr>
+      <tr><td class="dim">HHMI Janelia<br><span style="font-weight:400;color:#3a4370">2006 · campus of a medical philanthropy · Ashburn, VA</span></td><td>Purpose-built research campus explicitly modeled on Bell Labs: small groups, internal funding, shared instrumentation, term-limited appointments.</td><td>The modern Bell Labs replica proves the model still works when one funder guarantees the long horizon. Without that funder, diversify first.</td></tr>
+      <tr><td class="dim">SRI International<br><span style="font-weight:400;color:#3a4370">1946 · independent nonprofit · Menlo Park, CA</span></td><td>University spin-out that became a self-sustaining nonprofit on contract R&amp;D, with a venture arm spinning out companies (Siri among them).</td><td>Contract research plus a disciplined spin-out pathway is the self-sustaining version of the licensable-platform strategy in the CODEX.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Peers of the HIT Lab · XR labs and consortia</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:18px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Stanford Virtual Human Interaction Lab<br><span style="font-weight:400;color:#3a4370">university lab · Stanford</span></td><td>Jeremy Bailenson's lab made VR-and-empathy research publicly legible through one relentless message, popular books, and a demo every visitor remembers.</td><td>One researcher, one message, one demo: the communications discipline that made an academic lab a household reference in Luminara's exact territory.</td></tr>
+      <tr><td class="dim">USC Institute for Creative Technologies<br><span style="font-weight:400;color:#3a4370">1999 · university-affiliated research center · LA</span></td><td>Army-sponsored research center fusing Hollywood storytelling with simulation research under long-horizon government funding.</td><td>Mission-sponsor funding at scale carries editorial obligations: take anchor sponsors whose mission constraints you can live with permanently.</td></tr>
+      <tr><td class="dim">Empathic Computing Laboratory<br><span style="font-weight:400;color:#3a4370">university lab · UniSA / Auckland</span></td><td>Mark Billinghurst's lab (already on Luminara's board) researching shared-empathy XR with a steady peer-reviewed pipeline.</td><td>An in-house bridge to academic publication: route HeartBeam studies through collaborations the board already owns.</td></tr>
+      <tr><td class="dim">Khronos Group<br><span style="font-weight:400;color:#3a4370">2000 · member-funded consortium · 180+ orgs</span></td><td>One organization, one vote: explicit anti-capture design; tiered membership (promoters seat board directors, board approval required); working groups run by elected officers; members sign an IP framework on joining; output is royalty-free standards (OpenXR, Vulkan, glTF).</td><td>The complete blueprint for the Consortium of Light: tiered dues, one-member-one-vote, elected working-group officers, and an IP agreement signed at the door.</td></tr>
+      <tr><td class="dim">XR Association<br><span style="font-weight:400;color:#3a4370">2016 · trade association · DC</span></td><td>Industry advocacy body founded by the headset makers; policy and standards voice for the XR industry.</td><td>The venue where Luminara's Human Flourishing Design Standards (CODEX §43) would find industry uptake: a partner channel, not a structural model.</td></tr>
+      <tr><td class="dim">VR/AR Association<br><span style="font-weight:400;color:#3a4370">2015 · industry association · global chapters</span></td><td>Thousands of member companies organized into local chapters and vertical committees; education forum as flagship event.</td><td>Chapter/committee mechanics for growing a distributed community without diluting central governance.</td></tr>
+      <tr><td class="dim">Metaverse Standards Forum<br><span style="font-weight:400;color:#3a4370">2022 · founded by Khronos · 1,800+ orgs</span></td><td>Zero-dues, action-project coordination layer founded by Khronos to move faster than formal standards bodies.</td><td>Proof that a young convening body scales fastest by borrowing an established host's machinery (as Luminara is doing with VWS), then formalizing.</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:#A86C17;margin:0 0 6px">Mission-aligned funders · Who Luminara will answer to</h3>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:6px">
+    <thead><tr><th style="width:20%">Organization</th><th style="width:36%">Model</th><th style="color:#A86C17">The take for Luminara</th></tr></thead>
+    <tbody>
+      <tr><td class="dim">Fetzer Institute<br><span style="font-weight:400;color:#3a4370">est. 1954/1962, endowed 1991 · private foundation · MI</span></td><td>~$10M+ in annual grants at the science-spirituality intersection ("helping build the spiritual foundation for a loving world"); board of trustees governs strategy and CEO; funds organizations that pair spiritual framing with research rigor.</td><td>The single most mission-aligned grantmaker in Luminara's field; its diligence will ask for exactly the records this benchmark builds: minutes, adopted bylaws, controls, claims discipline.</td></tr>
+      <tr><td class="dim">John Templeton Foundation<br><span style="font-weight:400;color:#3a4370">1987 · private foundation · PA</span></td><td>Large-scale funder of science-and-big-questions research, almost always through university-partnered, peer-reviewed projects.</td><td>Reachable only through the Mind &amp; Life pattern: named academic collaborators on every proposal.</td></tr>
+      <tr><td class="dim">Virtual World Society<br><span style="font-weight:400;color:#3a4370">current fiscal home</span></td><td>Founder-linked nonprofit already hosting Luminara's programs, mail identity, and public attribution.</td><td>Today's sponsor, tomorrow's peer: paper the relationship now so the eventual exit is a handshake, not an untangling.</td></tr>
+    </tbody>
+  </table>
+</doc-page>
+</x-dc>
+</body>
+</html>
