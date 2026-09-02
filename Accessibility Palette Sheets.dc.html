@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
+  doc-page{font-family:'Source Serif 4',Georgia,serif;}
+  a{color:#0E398F;} a:hover{color:#030F58;}
+  doc-page h2{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A86C17;margin:26px 0 4px;break-after:avoid;}
+  doc-page h3{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#0E398F;margin:16px 0 6px;break-after:avoid;}
+  doc-page p{font-size:13.5px;line-height:1.6;margin:0 0 8px;}
+  doc-page td,doc-page th{font-size:12.5px;line-height:1.5;padding:6px 10px 6px 0;vertical-align:middle;border-bottom:1px solid #dcdff0;text-align:left;}
+  doc-page th{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#0E398F;border-bottom:1.5px solid #111a4a;}
+  .cond{font-size:12.5px;color:#3a4370;margin:0 0 10px;line-height:1.55;}
+  .sw{display:inline-block;width:14px;height:14px;margin-right:7px;vertical-align:-2px;border:1px solid #dcdff0;}
+  .hex{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.04em;color:#3a4370;}
+  .num{font-variant-numeric:tabular-nums;}
+  .pass{color:#334D3C;font-weight:600;}
+  .warn{color:#8c3b2e;font-weight:600;}
+  .note{font-size:12.5px;color:#3a4370;line-height:1.55;}
+  .rule-box{border:1.5px solid #F4BE3B;background:#FBF7EA;padding:12px 16px;margin:14px 0;break-inside:avoid;}
+</style>
+</helmet>
+<doc-page margin="0.85in">
+  <div style="border-bottom:3px double #F4BE3B;padding-bottom:14px;margin-bottom:8px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:18px;height:34px">
+    <div style="font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#0E398F;margin-bottom:8px;white-space:nowrap">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
+    <h1 style="font-size:25px;font-weight:700;margin:0 0 6px">Accessibility Palette Sheets</h1>
+    <p style="font-size:13px;color:#3a4370;margin:0">Companion to the Branding Style Sheet: the institute's palette re-issued for each condition it serves. Each sheet is labeled by the condition it responds to, and every value is computed against WCAG 2.1, not estimated.</p>
+  </div>
+  <p style="font-family:'Source Sans 3',sans-serif;font-size:11px;color:#3a4370;margin:0 0 16px">PROPOSED FOR REVIEW · Drew Stone holds color authority; adoption requires his review and Alley's approval · Owner: Branding &amp; Outreach</p>
+
+  <h2>The base palette these sheets adapt</h2>
+  <p class="cond">The settled assignments as of September 1, 2026. Divisions first, Bridge Groups second. Every sheet that follows starts from these values and changes only what the named condition requires.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th style="width:38%">Home</th><th style="width:34%">Color</th><th>Hex</th></tr></thead>
+    <tbody>
+      <tr><td>Research</td><td><span class="sw" style="background:#1A6073"></span>Inquiry Teal</td><td class="hex">#1A6073</td></tr>
+      <tr><td>Technology, AI &amp; Information Systems</td><td><span class="sw" style="background:#075BA8"></span>Interface Blue</td><td class="hex">#075BA8</td></tr>
+      <tr><td>Experience Architecture &amp; World Building</td><td><span class="sw" style="background:#D15B32"></span>Embodied Coral</td><td class="hex">#D15B32</td></tr>
+      <tr><td>Lumina Lingua</td><td><span class="sw" style="background:#66508E"></span>Meaning Violet</td><td class="hex">#66508E</td></tr>
+      <tr><td>Soulship Academy</td><td><span class="sw" style="background:#607A32"></span>Growth Green</td><td class="hex">#607A32</td></tr>
+      <tr><td>Community Service</td><td><span class="sw" style="background:#C58A32"></span>Service Amber</td><td class="hex">#C58A32</td></tr>
+      <tr><td>Governance</td><td><span class="sw" style="background:#334D3C"></span>Stewardship Green</td><td class="hex">#334D3C</td></tr>
+      <tr><td>Finance &amp; Fundraising</td><td><span class="sw" style="background:#7A5A1E"></span>Foundation Bronze</td><td class="hex">#7A5A1E</td></tr>
+      <tr><td>Internal Communications</td><td><span class="sw" style="background:#9B3F76"></span>Radiant Magenta</td><td class="hex">#9B3F76</td></tr>
+      <tr><td>Branding &amp; Outreach</td><td><span class="sw" style="background:#2E8556"></span>Jewel Emerald</td><td class="hex">#2E8556</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="break-before:page">Sheet 1 · Low vision and contrast sensitivity</h2>
+  <p class="cond"><strong>Condition responded to:</strong> reduced visual acuity and contrast sensitivity, including age-related change, cataract, and partial sight. What helps is not different hues but stronger separation between figure and ground. WCAG AA requires 4.5:1 for body-size text; seven of the ten base colors already pass on the ivory ground and three receive a deepened twin for text duty. The base color remains the brand color everywhere else.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th style="width:30%">Home</th><th>Base vs ivory</th><th>High-contrast hex</th><th>HC vs ivory</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Research</td><td class="num">6.61 : 1</td><td><span class="sw" style="background:#1A6073"></span><span class="hex">#1A6073 (unchanged)</span></td><td class="num">6.61 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Technology, AI &amp; Info. Systems</td><td class="num">6.38 : 1</td><td><span class="sw" style="background:#075BA8"></span><span class="hex">#075BA8 (unchanged)</span></td><td class="num">6.38 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Experience Arch. &amp; World Building</td><td class="num warn">3.73 : 1</td><td><span class="sw" style="background:#B8502C"></span><span class="hex">#B8502C</span></td><td class="num">4.64 : 1</td><td class="pass">deepened twin</td></tr>
+      <tr><td>Lumina Lingua</td><td class="num">6.31 : 1</td><td><span class="sw" style="background:#66508E"></span><span class="hex">#66508E (unchanged)</span></td><td class="num">6.31 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Soulship Academy</td><td class="num">4.53 : 1</td><td><span class="sw" style="background:#607A32"></span><span class="hex">#607A32 (unchanged)</span></td><td class="num">4.53 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Community Service</td><td class="num warn">2.78 : 1</td><td><span class="sw" style="background:#966926"></span><span class="hex">#966926</span></td><td class="num">4.51 : 1</td><td class="pass">deepened twin</td></tr>
+      <tr><td>Governance</td><td class="num">8.64 : 1</td><td><span class="sw" style="background:#334D3C"></span><span class="hex">#334D3C (unchanged)</span></td><td class="num">8.64 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Finance &amp; Fundraising</td><td class="num">5.92 : 1</td><td><span class="sw" style="background:#7A5A1E"></span><span class="hex">#7A5A1E (unchanged)</span></td><td class="num">5.92 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Internal Communications</td><td class="num">5.82 : 1</td><td><span class="sw" style="background:#9B3F76"></span><span class="hex">#9B3F76 (unchanged)</span></td><td class="num">5.82 : 1</td><td class="pass">passes as is</td></tr>
+      <tr><td>Branding &amp; Outreach</td><td class="num warn">4.25 : 1</td><td><span class="sw" style="background:#2C8053"></span><span class="hex">#2C8053</span></td><td class="num">4.54 : 1</td><td class="pass">deepened twin</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Service Amber at 2.78:1 confirms the orange-on-ivory concern from the color review; its role as a warm ground with heavy supporting colors stands, and its deepened twin #966926 carries any text duty. Luminara Gold #F4BE3B measures 1.60:1 against ivory and never carries text on light grounds; on Midnight it measures 10.12:1 and shines. Document ink #111a4a runs 15.42:1 on ivory.</p>
+
+  <h3>On dark grounds</h3>
+  <p class="note">The same eyes need the same separation on Midnight Blue #030F58 and video grounds, where the base colors run too deep. Each color lifts toward white by eighteen percent; the 3:1 large-text threshold is computed against Midnight. Body text on dark grounds is always Ivory, never a division color; these serve headings, icons, chips, and lower thirds.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th style="width:30%">Home</th><th>Dark-ground hex</th><th>vs Midnight</th><th>Large-text AA (3:1)</th></tr></thead>
+    <tbody>
+      <tr><td>Research</td><td><span class="sw" style="background:#437D8C"></span><span class="hex">#437D8C</span></td><td class="num">3.75 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Technology, AI &amp; Info. Systems</td><td><span class="sw" style="background:#3479B8"></span><span class="hex">#3479B8</span></td><td class="num">3.77 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Experience Arch. &amp; World Building</td><td><span class="sw" style="background:#D97957"></span><span class="hex">#D97957</span></td><td class="num">5.62 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Lumina Lingua</td><td><span class="sw" style="background:#8270A2"></span><span class="hex">#8270A2</span></td><td class="num">3.95 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Soulship Academy</td><td><span class="sw" style="background:#7D9257"></span><span class="hex">#7D9257</span></td><td class="num">5.05 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Community Service</td><td><span class="sw" style="background:#CF9F57"></span><span class="hex">#CF9F57</span></td><td class="num">7.21 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Governance</td><td><span class="sw" style="background:#586D5F"></span><span class="hex">#586D5F</span></td><td class="num">3.11 : 1</td><td class="pass">passes, barely; prefer icon use over type</td></tr>
+      <tr><td>Finance &amp; Fundraising</td><td><span class="sw" style="background:#927846"></span><span class="hex">#927846</span></td><td class="num">4.12 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Internal Communications</td><td><span class="sw" style="background:#AD628F"></span><span class="hex">#AD628F</span></td><td class="num">4.06 : 1</td><td class="pass">passes</td></tr>
+      <tr><td>Branding &amp; Outreach</td><td><span class="sw" style="background:#549B74"></span><span class="hex">#549B74</span></td><td class="num">5.21 : 1</td><td class="pass">passes</td></tr>
+    </tbody>
+  </table>
+
+  <h2 style="break-before:page">Sheet 2 · Red-green color vision deficiency</h2>
+  <p class="cond"><strong>Condition responded to:</strong> deuteranopia and deuteranomaly (green cone absent or shifted) and protanopia and protanomaly (red cone absent or shifted), together the most common forms: roughly eight percent of men and half a percent of women. Red-green hue distinctions collapse; what survives is luminance, the lightness channel. A pair is safe when its lightness separation is large; it is risky when two hues differ mainly in redness or greenness at similar lightness.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th colspan="2">Pair on the red-green axis</th><th>Pair contrast</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sw" style="background:#9B3F76"></span>Radiant Magenta</td><td><span class="sw" style="background:#2E8556"></span>Jewel Emerald</td><td class="num">1.37 : 1</td><td class="warn">the flagged axis: near-twins under deutan vision</td></tr>
+      <tr><td><span class="sw" style="background:#2E8556"></span>Jewel Emerald</td><td><span class="sw" style="background:#607A32"></span>Growth Green</td><td class="num">1.06 : 1</td><td class="warn">near-identical lightness; confusable for all viewers at small sizes</td></tr>
+      <tr><td><span class="sw" style="background:#D15B32"></span>Embodied Coral</td><td><span class="sw" style="background:#607A32"></span>Growth Green</td><td class="num">1.21 : 1</td><td class="warn">classic red vs green at similar lightness</td></tr>
+      <tr><td><span class="sw" style="background:#D15B32"></span>Embodied Coral</td><td><span class="sw" style="background:#C58A32"></span>Service Amber</td><td class="num">1.34 : 1</td><td>adjacent warms; rely on labels</td></tr>
+      <tr><td><span class="sw" style="background:#7A5A1E"></span>Foundation Bronze</td><td><span class="sw" style="background:#334D3C"></span>Stewardship Green</td><td class="num">1.46 : 1</td><td>borderline; rarely co-plotted</td></tr>
+      <tr><td><span class="sw" style="background:#C58A32"></span>Service Amber</td><td><span class="sw" style="background:#607A32"></span>Growth Green</td><td class="num">1.63 : 1</td><td class="pass">acceptable separation</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>The response, and what it deliberately is not.</strong> Deepening Jewel Emerald was tested and makes the magenta pair worse, not better: magenta sits below emerald in lightness, so separation must come from lifting the green, and Drew's magenta is never altered. The response is a <strong>chart accent</strong>: in data graphics, org charts, and any context where Internal Communications and Branding &amp; Outreach (or the two deep greens) appear side by side, Branding &amp; Outreach plots as <span class="sw" style="background:#45A873"></span><span class="hex">#45A873</span> (Emerald Chart Accent). Pair contrast against magenta rises from 1.37:1 to 2.11:1 and against Growth Green from 1.06:1 to 1.64:1. Brand surfaces keep Jewel Emerald #2E8556 unchanged; the accent exists only where colors must be told apart at a glance. Where even that is not enough, the governing rule on the last sheet applies.</p>
+
+  <h2 style="break-before:page">Sheet 3 · Blue-yellow color vision deficiency</h2>
+  <p class="cond"><strong>Condition responded to:</strong> tritanopia and tritanomaly (blue cone absent or shifted), the rare form: on the order of one in ten thousand, affecting men and women equally. Blue-yellow distinctions collapse; blues, teals, and violets draw together, as do yellows and warm midtones. The computed pair contrasts on the institute's blue axis:</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th colspan="2">Pair on the blue-yellow axis</th><th>Pair contrast</th><th>Reading</th></tr></thead>
+    <tbody>
+      <tr><td><span class="sw" style="background:#075BA8"></span>Interface Blue</td><td><span class="sw" style="background:#1A6073"></span>Inquiry Teal</td><td class="num">1.04 : 1</td><td class="warn">near-twins under tritan vision</td></tr>
+      <tr><td><span class="sw" style="background:#66508E"></span>Meaning Violet</td><td><span class="sw" style="background:#075BA8"></span>Interface Blue</td><td class="num">1.01 : 1</td><td class="warn">identical lightness; hue is the only difference</td></tr>
+      <tr><td><span class="sw" style="background:#66508E"></span>Meaning Violet</td><td><span class="sw" style="background:#1A6073"></span>Inquiry Teal</td><td class="num">1.05 : 1</td><td class="warn">near-twins under tritan vision</td></tr>
+      <tr><td><span class="sw" style="background:#9B3F76"></span>Radiant Magenta</td><td><span class="sw" style="background:#66508E"></span>Meaning Violet</td><td class="num">1.08 : 1</td><td class="warn">draws together as blue perception fades</td></tr>
+      <tr><td><span class="sw" style="background:#0E398F"></span>Royal Blue</td><td><span class="sw" style="background:#334D3C"></span>Stewardship Green</td><td class="num">1.13 : 1</td><td>deep pair; rarely co-plotted</td></tr>
+      <tr><td><span class="sw" style="background:#F4BE3B"></span>Luminara Gold</td><td><span class="sw" style="background:#C58A32"></span>Service Amber</td><td class="num">1.74 : 1</td><td class="pass">acceptable separation</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>The response.</strong> The cool cluster (Interface Blue, Inquiry Teal, Meaning Violet, Radiant Magenta) sits within seven percent of one lightness value, so no hue adjustment can separate it for tritan vision without leaving the brand; the separation must come from lightness steps and labels. Where two or more of the cluster are co-plotted, plot them at different lightness levels: take the darker member from this sheet's base value and the lighter member from the dark-ground column on Sheet 1 (a computed lift of eighteen percent). With one exception the cluster rarely shares a chart; the labels rule carries the rest.</p>
+
+  <h2 style="break-before:page">Sheet 4 · Complete color blindness</h2>
+  <p class="cond"><strong>Condition responded to:</strong> achromatopsia, the absence of color perception: roughly one in thirty thousand people, who see the palette as pure luminance. This sheet shows the gray each color actually presents. Where two grays match, those colors are indistinguishable, and only position, label, shape, or pattern separates them.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th style="width:38%">Home</th><th>Color</th><th>Presents as</th><th>Gray</th></tr></thead>
+    <tbody>
+      <tr><td>Community Service</td><td><span class="sw" style="background:#C58A32"></span>Service Amber</td><td><span class="sw" style="background:#969696"></span><span class="hex">#969696</span></td><td class="num">lightest</td></tr>
+      <tr><td>Experience Arch. &amp; World Building</td><td><span class="sw" style="background:#D15B32"></span>Embodied Coral</td><td><span class="sw" style="background:#7F7F7F"></span><span class="hex">#7F7F7F</span></td><td class="num">light</td></tr>
+      <tr><td>Branding &amp; Outreach</td><td><span class="sw" style="background:#2E8556"></span>Jewel Emerald</td><td><span class="sw" style="background:#767676"></span><span class="hex">#767676</span></td><td class="num">light-mid</td></tr>
+      <tr><td>Soulship Academy</td><td><span class="sw" style="background:#607A32"></span>Growth Green</td><td><span class="sw" style="background:#717171"></span><span class="hex">#717171</span></td><td class="num">mid</td></tr>
+      <tr><td>Internal Communications</td><td><span class="sw" style="background:#9B3F76"></span>Radiant Magenta</td><td><span class="sw" style="background:#616161"></span><span class="hex">#616161</span></td><td class="num warn">merged band</td></tr>
+      <tr><td>Finance &amp; Fundraising</td><td><span class="sw" style="background:#7A5A1E"></span>Foundation Bronze</td><td><span class="sw" style="background:#5F5F5F"></span><span class="hex">#5F5F5F</span></td><td class="num warn">merged band</td></tr>
+      <tr><td>Technology, AI &amp; Info. Systems</td><td><span class="sw" style="background:#075BA8"></span>Interface Blue</td><td><span class="sw" style="background:#5B5B5B"></span><span class="hex">#5B5B5B</span></td><td class="num warn">merged band</td></tr>
+      <tr><td>Lumina Lingua</td><td><span class="sw" style="background:#66508E"></span>Meaning Violet</td><td><span class="sw" style="background:#5B5B5B"></span><span class="hex">#5B5B5B</span></td><td class="num warn">merged band</td></tr>
+      <tr><td>Research</td><td><span class="sw" style="background:#1A6073"></span>Inquiry Teal</td><td><span class="sw" style="background:#585858"></span><span class="hex">#585858</span></td><td class="num warn">merged band</td></tr>
+      <tr><td>Governance</td><td><span class="sw" style="background:#334D3C"></span>Stewardship Green</td><td><span class="sw" style="background:#474747"></span><span class="hex">#474747</span></td><td class="num">darkest</td></tr>
+    </tbody>
+  </table>
+  <p class="note"><strong>The response.</strong> Five of the ten colors land in one merged gray band (#585858 to #616161): to an achromatopic reader, Research, Technology, Lumina Lingua, Finance, and Internal Communications are the same color. No palette that keeps these brand hues can fix that in gray; the fix is structural and already adopted as the governing rule: every color-coded element carries its label, and printed materials stay legible photocopied in black and white, which is also the test any staff member can run without tools.</p>
+
+  <h2>Sheet 5 · Photosensitivity and visual stress</h2>
+  <p class="cond"><strong>Condition responded to:</strong> light sensitivity and pattern-related visual stress, including migraine and post-concussion sensitivity. What helps is a softened ground, reduced saturation over large areas, and no high-frequency contrast patterns. The document ivory #FBF7EA already sits below pure white; for large fields, the palette softens to these tints, blended three quarters of the way toward ivory. Tints are grounds only; they never carry meaning alone and never carry text without an ink-dark foreground.</p>
+  <table style="width:100%;border-collapse:collapse">
+    <thead><tr><th style="width:30%">Home</th><th>Soft tint</th><th style="width:30%">Intended use</th></tr></thead>
+    <tbody>
+      <tr><td>Research</td><td><span class="sw" style="background:#C3D1CC"></span><span class="hex">#C3D1CC</span></td><td>Section tint</td></tr>
+      <tr><td>Technology, AI &amp; Info. Systems</td><td><span class="sw" style="background:#BED0DA"></span><span class="hex">#BED0DA</span></td><td>Section tint</td></tr>
+      <tr><td>Experience Arch. &amp; World Building</td><td><span class="sw" style="background:#F0D0BC"></span><span class="hex">#F0D0BC</span></td><td>Section tint</td></tr>
+      <tr><td>Lumina Lingua</td><td><span class="sw" style="background:#D6CDD3"></span><span class="hex">#D6CDD3</span></td><td>Section tint</td></tr>
+      <tr><td>Soulship Academy</td><td><span class="sw" style="background:#D4D8BC"></span><span class="hex">#D4D8BC</span></td><td>Section tint</td></tr>
+      <tr><td>Community Service</td><td><span class="sw" style="background:#EEDCBC"></span><span class="hex">#EEDCBC</span></td><td>Section tint</td></tr>
+      <tr><td>Governance</td><td><span class="sw" style="background:#C9CCBE"></span><span class="hex">#C9CCBE</span></td><td>Row shading</td></tr>
+      <tr><td>Finance &amp; Fundraising</td><td><span class="sw" style="background:#DBD0B7"></span><span class="hex">#DBD0B7</span></td><td>Row shading</td></tr>
+      <tr><td>Internal Communications</td><td><span class="sw" style="background:#E3C9CD"></span><span class="hex">#E3C9CD</span></td><td>Row shading</td></tr>
+      <tr><td>Branding &amp; Outreach</td><td><span class="sw" style="background:#C8DAC5"></span><span class="hex">#C8DAC5</span></td><td>Row shading</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Full-saturation Luminara Gold stays an accent at this sheet's sizes, never a full-page ground; animated or flashing brand elements are not used in any material, on any surface.</p>
+
+  <h2>The governing rule: never color alone</h2>
+  <div class="rule-box">
+    <p style="margin:0">Any meaning a color carries is also carried by a word, shape, or pattern. This rule governs every sheet above. Accessibility in this system is achieved first by labeling and iconography, and only second by the luminance engineering on these sheets; no chart, map, badge, or document in the institute's materials may rely on hue as the sole carrier of information. This is the accessibility floor beneath the palette, adopted alongside the every-page identity rule.</p>
+  </div>
+  <p class="note">Prevalence figures follow published vision-science reporting; pair values and gray equivalents are computed from the hex values by WCAG 2.1 relative luminance. The widely used Okabe-Ito colorblind-safe palette served as the external reference standard when testing the chart accent. Adoption path: these sheets go to Drew Stone for color review, then to Alley Till for approval, then the adopted values join the Branding Style Sheet as application rows. Until then, every value on this page is a computed proposal.</p>
+</doc-page>
+</x-dc>
+</body>
+</html>
