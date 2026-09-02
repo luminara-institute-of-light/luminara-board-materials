@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
+  doc-page{font-family:'Source Serif 4',Georgia,serif;}
+  doc-page p{font-size:12.5px;line-height:1.55;margin:0 0 8px;}
+  .kicker{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#0E398F;margin-bottom:8px;white-space:nowrap;}
+  .field{display:flex;align-items:baseline;gap:7px;font-size:12.5px;}
+  .field .line{flex:1;border-bottom:1px solid #111a4a;}
+  ol.agenda{list-style:none;margin:6px 0 0;padding:0;counter-reset:item;}
+  ol.agenda>li{counter-increment:item;display:flex;gap:12px;padding:7px 0;border-bottom:1px solid #dcdff0;font-size:13px;line-height:1.5;break-inside:avoid;}
+  ol.agenda>li::before{content:counter(item);flex:none;width:22px;font-family:'Source Sans 3',sans-serif;font-weight:700;color:#A86C17;}
+  .lead{font-weight:600;}
+  .note{color:#3a4370;font-size:12px;}
+  .filed{font-size:10.5px;color:#3a4370;}
+</style>
+</helmet>
+<doc-page margin="0.8in">
+  <div style="border-bottom:3px double #F4BE3B;padding-bottom:12px;margin-bottom:14px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
+    <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
+    <h1 style="font-size:22px;font-weight:700;margin:0 0 5px">Regular Meeting Agenda</h1>
+    <p style="font-size:12px;color:#3a4370;margin:0">The standing order of business for a regular meeting of the Board of Directors. The Chair sets the agenda with the Secretary; items are added under New Business.</p>
+  </div>
+  <div style="display:flex;gap:24px;margin:0 0 6px">
+    <div class="field" style="flex:1"><span style="flex:none">Meeting date:</span><span class="line">&nbsp;</span></div>
+    <div class="field" style="flex:1"><span style="flex:none">Time:</span><span class="line">&nbsp;</span></div>
+    <div class="field" style="flex:2"><span style="flex:none">Place / platform:</span><span class="line">&nbsp;</span></div>
+  </div>
+  <ol class="agenda">
+    <li><span><span class="lead">Call to order and quorum.</span> <span class="note">The Chair opens the meeting; the Secretary confirms a quorum is present.</span></span></li>
+    <li><span><span class="lead">Approval of the agenda.</span> <span class="note">Including any items added since notice, subject to the Major-Action limit.</span></span></li>
+    <li><span><span class="lead">Approval of prior minutes.</span> <span class="note">The minutes of the last meeting are corrected as needed and approved.</span></span></li>
+    <li><span><span class="lead">Chair's report.</span></span></li>
+    <li><span><span class="lead">Treasurer's report.</span> <span class="note">The standing financial report, received and filed with these minutes.</span></span></li>
+    <li><span><span class="lead">Committee and division reports.</span> <span class="note">As scheduled; Bridge Groups and program divisions as called.</span></span></li>
+    <li><span><span class="lead">Consent agenda.</span> <span class="note">Routine items adopted together in one motion unless a director asks to remove one.</span></span></li>
+    <li><span><span class="lead">Old business.</span> <span class="note">Matters held over from a prior meeting.</span></span></li>
+    <li><span><span class="lead">New business.</span> <span class="note">Resolutions and matters for decision. A Major Action appears here only if it was stated in the notice.</span></span></li>
+    <li><span><span class="lead">Conflicts and disclosures.</span> <span class="note">Any conflict arising on an agenda item is disclosed and handled before the vote.</span></span></li>
+    <li><span><span class="lead">Executive session, if needed.</span> <span class="note">Confidential personnel, legal, financial, or conflict matters.</span></span></li>
+    <li><span><span class="lead">Next meeting and adjournment.</span></span></li>
+  </ol>
+  <p class="filed" style="margin-top:18px;border-top:1.5px solid #F4BE3B;padding-top:12px">Prepared by the Chair with the Secretary and issued with the meeting notice. Filed with the minutes of the meeting.</p>
+</doc-page>
+</x-dc>
+</body>
+</html>
