@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="./doc-page.js"></script>
+<style>
+  doc-page:not(:defined){visibility:hidden}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
+  doc-page{font-family:'Source Serif 4',Georgia,serif;}
+  doc-page h2{font-family:'Source Sans 3',sans-serif;font-size:11.5px;letter-spacing:0.16em;text-transform:uppercase;color:#A86C17;margin:12px 0 5px;break-after:avoid;}
+  doc-page p{font-size:12.5px;line-height:1.55;margin:0 0 7px;}
+  .kicker{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#0E398F;margin-bottom:8px;white-space:nowrap;}
+  .eyebrow{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#A86C17;margin:0 0 4px;}
+  .sig{border-bottom:1px solid #111a4a;height:28px;}
+  .siglabel{font-size:11.5px;color:#3a4370;margin:3px 0 0;}
+  .writein{border-bottom:1px solid #9aa1c0;height:24px;margin-bottom:10px;}
+  .field{display:flex;align-items:baseline;gap:7px;font-size:12.5px;}
+  .field .line{flex:1;border-bottom:1px solid #111a4a;}
+  .opt{font-size:12.5px;line-height:1.7;}
+  .box{display:inline-block;width:11px;height:11px;border:1.5px solid #111a4a;margin-right:7px;vertical-align:-1px;}
+  .blank{display:inline-block;border-bottom:1px solid #9aa1c0;height:13px;}
+  .letter p{font-size:13.5px;line-height:1.75;margin:0 0 14px;}
+  .lfoot{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#3a4370;text-align:center;border-top:1.5px solid #F4BE3B;padding-top:12px;margin-top:auto;}
+  .filed{font-size:10.5px;color:#3a4370;}
+</style>
+</helmet>
+<doc-page>
+  <section class="page" style="padding:0.62in 0.7in;display:flex;flex-direction:column">
+    <div style="border-bottom:3px double #F4BE3B;padding-bottom:10px;margin-bottom:11px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
+      <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
+      <h1 style="font-size:21px;font-weight:700;margin:0">Gift Acceptance Record</h1>
+    </div>
+    <div style="display:flex;gap:24px;margin:auto 0 8px">
+      <div class="field" style="flex:2"><span style="flex:none">Donor:</span><span class="line">&nbsp;</span></div>
+      <div class="field" style="flex:1"><span style="flex:none">Date received:</span><span class="line">&nbsp;</span></div>
+    </div>
+    <h2>The gift</h2>
+    <p style="font-size:11.5px;color:#3a4370;margin:0 0 3px">Description, and value or good-faith estimate for in-kind gifts:</p>
+    <div class="writein"></div>
+    <div class="writein"></div>
+    <p class="opt" style="margin:0 0 6px"><span class="box"></span>Unrestricted&nbsp;&nbsp;&nbsp;<span class="box"></span>Restricted; the restriction, in the donor's words:</p>
+    <div class="writein"></div>
+    <h2>Review</h2>
+    <p class="opt" style="margin:0 0 6px"><span class="box"></span>Accepted without special review under the Gift Acceptance Policy<br>
+    <span class="box"></span>Review required (restricted, conditioned, non-cash asset, conflicted party, foreign source, or ongoing obligation); reviewed by the Treasurer and Chair on: <span class="blank" style="width:120px"></span></p>
+    <h2>Decision</h2>
+    <p class="opt" style="margin:0 0 8px"><span class="box"></span>Accepted; Letter of Gratitude sent on <span class="blank" style="width:120px"></span><br>
+    <span class="box"></span>Declined or returned; Letter of Declination sent on <span class="blank" style="width:120px"></span></p>
+    <div style="display:grid;grid-template-columns:2fr 1fr;gap:32px">
+      <div><div class="sig"></div><p class="siglabel">Treasurer (or Chair, for a gift in which the Treasurer holds an interest)</p></div>
+      <div><div class="sig"></div><p class="siglabel">Date</p></div>
+    </div>
+    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Kept under the Gift Acceptance Policy; reported in the Treasurer's Report; retained with the financial records. The Letter of Gratitude and Letter of Declination are sent from their companion templates, and a copy of each sent letter files with this record. For a declined gift, record the specific reason here, never in the letter. The fiscal-sponsorship sentence in the Letter of Gratitude retires when the determination letter arrives; from that date the letter must add the written-acknowledgment statement federal law requires for gifts of $250 or more, including whether any goods or services were provided in exchange.</p>
+  </section>
+</doc-page>
+</x-dc>
+</body>
+</html>
