@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -12,112 +12,391 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;background:#fff;}
-  a{color:#0E398F;text-decoration:none;} a:hover{color:#030F58;text-decoration:underline;}
+  :root{--gold:#F4BE3B;--royal:#0E398F;--midnight:#030F58;--bronze:#A86C17;--ivory:#FBF7EA;--ink:#111a4a;--muted:#3a4370;--line:#dcdff0;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.65;}
+  a{color:var(--royal);text-decoration:none;} a:hover{color:var(--midnight);text-decoration:underline;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-weight:700;line-height:1.2;margin:0}
+  h1{font-size:clamp(36px,6vw,56px)} h2{font-size:clamp(26px,3.6vw,32px)} h3{font-size:20px}
+  p{margin:0}
+  .sans{font-family:'Source Sans 3',sans-serif}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:820px}
+  .eyebrow{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+  .lede{font-size:20px;line-height:1.6}
+  .muted{color:var(--muted)}
+  .small{font-size:15px}
+  section{padding:80px 0}
+  section+section{border-top:1px solid var(--line)}
+  .band{background:var(--ivory)}
+  .stack>*+*{margin-top:14px}
+  .btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;padding:14px 30px;border-radius:2px;border:2px solid var(--gold);background:var(--gold);color:var(--midnight);text-decoration:none}
+  .btn:hover{filter:brightness(1.06);color:var(--midnight);text-decoration:none}
+  .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,0.7)}
+  .btn.secondary:hover{background:rgba(255,255,255,0.1);color:#fff}
+  .btn.small{padding:9px 18px;font-size:13px}
+  .site-header{position:sticky;top:0;z-index:10;background:var(--midnight);border-bottom:2px solid var(--midnight)}
+  .ribbon{display:flex;width:100%}
+  .ribbon a{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-align:center;color:#fff;text-decoration:none;border-right:2px solid var(--midnight);transition:filter .12s ease}
+  .ribbon a:last-child{border-right:0}
+  .ribbon a:hover{filter:brightness(1.12);text-decoration:none;color:inherit}
+  .ribbon a:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+  @media (max-width:760px){.ribbon{flex-wrap:wrap}.ribbon a{flex:1 1 33.33%;min-height:44px;font-size:12px;border-bottom:2px solid var(--midnight)}}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Source Sans 3',sans-serif;font-weight:700;letter-spacing:0.06em;color:var(--ink)}
+  .school-hero{position:relative;background:#030F58;border-bottom:3px double var(--gold)}
+  .school-photo{position:relative;height:clamp(420px,58vw,680px);overflow:hidden;background:#030F58}
+  .school-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:grayscale(1) contrast(1.05);display:block}
+  .school-banner{position:absolute;left:48px;right:48px;top:calc(40% + 165px);background:var(--ivory);border:2px solid var(--midnight);border-top:0;padding:28px 0}
+  .school-banner .container{max-width:1360px;text-align:center}
+  .school-banner h2{font-size:clamp(22px,3vw,28px);margin:0}
+  .school-banner p{max-width:none;font-size:15px;line-height:1.5}
+  .school-banner p+p{margin-top:10px}
+  @media (max-width:720px){.school-banner{position:static}.school-photo{height:52vw}}
+  .school-photo .sign{position:absolute;left:48px;right:48px;top:calc(40% + 75px);border:2px solid var(--midnight);border-bottom:0;background:var(--gold);color:var(--midnight);font-family:'Source Sans 3',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.3em;text-transform:uppercase;text-align:center;padding:32px 28px;display:flex;align-items:center;gap:22px;border-top:3px double #D15B32;border-bottom:3px double #D15B32}
+  .school-photo .sign::before,.school-photo .sign::after{content:"";flex:1 1 0;height:5px;background:linear-gradient(var(--midnight) 0 1px,transparent 1px 4px,var(--midnight) 4px 5px)}
+  .board-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .dot{background:none;border:0;padding:0;margin:0;cursor:pointer;border-radius:50%}
+  .dot img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 30%;display:block;border:3px solid var(--gold);transition:transform .15s ease,border-color .15s ease}
+  .dot:hover img,.dot:focus-visible img,.dot[aria-expanded="true"] img{transform:scale(1.08);border-color:var(--royal)}
+  .dot:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .hover-card{margin:26px auto 0;max-width:820px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);box-shadow:0 22px 60px rgba(3,15,88,0.18);padding:28px 32px;display:grid;grid-template-columns:132px 1fr;gap:26px;align-items:start}
+  .hover-card[hidden]{display:none}
+  .hover-card .pimg{width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:center 30%}
+  .hover-card h3{font-size:24px;margin-bottom:2px}
+  .hover-card .ptitle{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+  .hover-card p{font-size:16px;line-height:1.65}
+  .hover-card .gallery{grid-column:1 / -1;display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .hover-card .gallery img{width:150px;height:100px;object-fit:cover;border:1px solid var(--line)}
+  @media (max-width:640px){.hover-card{grid-template-columns:1fr}.hover-card .pimg{margin:0 auto}}
+  .bars{display:flex;flex-direction:column;gap:18px}
+  .bar{display:grid;grid-template-columns:minmax(220px,34%) 1fr;gap:28px;align-items:center;padding:18px 28px;border:2px solid var(--midnight);min-height:72px}
+  .bar-name{font-weight:700;font-size:20px;line-height:1.2}
+  .bar-desc{font-size:15px;line-height:1.5;opacity:.95}
+  @media (max-width:640px){.bar{grid-template-columns:1fr;gap:6px}}
+  .midnight-band{background:var(--midnight);color:var(--ivory);padding:40px 0 44px;border-bottom:3px double var(--gold)}
+  .wuw{display:flex;align-items:center;gap:28px;max-width:1360px}
+  .wuw .side{flex:1 1 0;font-size:16px;line-height:1.5;color:rgba(251,247,234,0.82);margin:0}
+  .wuw .side.right{text-align:right} .wuw .side.left{text-align:left}
+  .wuw .mid{flex:0 0 auto;text-align:center;padding:10px 26px;border-top:3px double var(--gold);border-bottom:3px double var(--gold)}
+  .wuw .mid span{display:block;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:clamp(26px,3.2vw,40px);letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);line-height:1.1;white-space:nowrap}
+  @media (max-width:760px){.wuw{flex-direction:column;gap:14px;text-align:center}.wuw .side.right,.wuw .side.left{text-align:center}.wuw .mid span{white-space:normal}}
+  .cal-band{padding:48px 0 56px;background:#fff}
+  .cal-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .cal-month{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze)}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);border:2px solid var(--midnight);border-top:0}
+  .cal-dow{background:var(--midnight);color:var(--ivory);font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:8px 0}
+  .cal-cell{min-height:92px;padding:6px 8px 8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+  .cal-cell:nth-child(7n+7){border-right:0}
+  .cal-cell.empty{background:#FBF7EA}
+  .cal-day{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--muted)}
+  .chip{display:block;font-family:'Source Sans 3',sans-serif;font-size:11.5px;line-height:1.3;padding:3px 6px;border-radius:2px;color:#fff;background:var(--royal)}
+  .chip.ls{background:#607A32} .chip.plf{background:#66508E} .chip.cc{background:#D15B32} .chip.all{background:var(--midnight)} .chip.hb{background:#1A6073} .chip.oh{background:var(--royal)} .chip.ext{background:#FBF7EA;color:var(--ink);border:1px solid var(--line)}
+  .cal-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:'Source Sans 3',sans-serif;font-size:12.5px;color:var(--muted)}
+  .cal-legend span{display:inline-flex;align-items:center;gap:6px}
+  .cal-legend i.chip{width:14px;height:14px;padding:0;display:inline-block}
+  @media (max-width:720px){.cal-grid{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.cal-cell{min-height:64px;padding:4px}.chip{font-size:10px;padding:2px 3px}}
+  #work{background:var(--midnight);padding:56px 0 64px;border-top:0}
+  #work .container{max-width:1440px}
+  .work{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .work-card{background:#fff;border:1px solid var(--line);border-top:10px solid var(--royal);padding:40px 44px 34px;display:flex;flex-direction:column;gap:14px;min-height:260px}
+  .work-card h3{font-size:30px;line-height:1.15}
+  .work-card .when{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze)}
+  .work-card p{font-size:16px;line-height:1.5;margin:0}
+  .work-card .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:15px}
+  @media (max-width:820px){.work{grid-template-columns:1fr}}
+  .site-footer{background:var(--ivory);color:var(--muted);border-top:3px double var(--gold);padding:44px 0 30px;font-family:'Source Serif 4',Georgia,serif;font-size:15px}
+  .site-footer .footer-links,.site-footer .legal{font-family:'Source Sans 3',sans-serif;font-size:14px}
+  .site-footer a{color:var(--royal)} .site-footer .footer-links a{color:var(--ink)} .site-footer a:hover{color:var(--midnight)}
+  .site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+  @media (max-width:720px){.site-footer .cols{grid-template-columns:1fr}}
+  .site-footer .legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+  .site-footer .brand{color:var(--ink)}
+  .footer-links a{display:block;margin-bottom:8px}
+  .hero{background:linear-gradient(180deg,var(--midnight) 0%,var(--royal) 70%,#0E398F 100%);color:#fff;padding:120px 0 100px;text-align:center}
+  .hero h1{font-style:italic;max-width:900px;margin:0 auto}
+  .hero .tagline{font-size:clamp(18px,2.4vw,22px);font-style:italic;color:rgba(251,247,234,0.82);max-width:760px;margin:24px auto 0}
+  .hero .actions{margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .card{border-top:5px solid var(--royal);background:var(--ivory);padding:24px}
+  .card h3{margin-bottom:8px}
+  .card p{font-size:15px;line-height:1.6}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+  .person{display:flex;gap:16px;align-items:flex-start}
+  .person img{flex:none;width:80px;height:80px;border-radius:50%;object-fit:cover}
+  .person h3{font-size:18px;margin-bottom:2px}
+  .person .title{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:8px}
+  .person p{font-size:14px;line-height:1.6}
+  .trajectory{display:block;width:100%;max-width:1100px;height:clamp(240px,26vw,340px);margin:30px auto 22px}
+  .trajectory .tnum{font-family:'Source Sans 3',sans-serif;font-size:22px;font-weight:700;fill:#FBF7EA}
+  .trajectory .tlbl{font-family:'Source Sans 3',sans-serif;font-size:20px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;fill:#FBF7EA}
+  .trajectory .ms{cursor:pointer;outline:none}
+  .trajectory .ms:hover circle,.trajectory .ms:focus-visible circle,.trajectory .ms[aria-expanded="true"] circle{stroke-width:7}
+  .ms-card{max-width:820px;margin:-6px auto 30px;background:#fff;color:var(--ink);text-align:left;padding:28px 34px 26px;border-top:8px solid var(--royal);box-shadow:0 22px 60px rgba(0,0,0,0.35)}
+  .ms-card[hidden]{display:none}
+  .ms-card h3{font-size:26px;margin:0 0 8px}
+  .ms-card p{font-size:16px;line-height:1.6}
+  .ms-card .next{margin-top:12px;font-size:15px}
+  .ms-card .next span{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze);margin-right:8px}
+  .ms-card .q{margin:16px 0 0;padding:14px 18px;border-left:4px solid var(--gold);background:var(--ivory);font-style:italic;font-size:15.5px;line-height:1.55}
+  .ms-card .q cite{display:block;margin-top:6px;font-style:normal;font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze)}
+  .first100{position:relative;overflow:hidden;background:var(--midnight);color:var(--ivory);padding:80px 0;border-top:3px double var(--gold)}
+  .first100 .spray{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .pioneers{list-style:none;margin:36px auto 0;padding:0;max-width:1240px;column-count:4;column-gap:36px;text-align:left}
+  .pioneers li{font-family:'Source Sans 3',sans-serif;font-size:17px;font-weight:600;letter-spacing:0.03em;color:var(--gold);line-height:1.9;break-inside:avoid;padding-left:18px;position:relative}
+  .pioneers li::before{content:"\2726";position:absolute;left:0;top:0;font-size:11px;color:rgba(251,247,234,0.55)}
+  @media (max-width:900px){.pioneers{column-count:2}}
+  .pathway-wrap{max-width:1100px;margin:30px auto 8px;overflow-x:auto}
+  .pathway{width:100%;height:auto;display:block;min-width:720px}
+  .pathway .lbl{font-family:'Source Sans 3',sans-serif;font-size:15px;font-weight:700;letter-spacing:0.06em;fill:var(--ivory)}
+  .steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:26px auto;font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.04em}
+  .steps span{border:1px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:2px}
+  .steps span.now{background:var(--gold);color:var(--midnight);font-weight:700}
+  .directory{border-top:1px solid var(--line)}
+  .directory .row{display:grid;grid-template-columns:240px 1fr 320px;gap:24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+  .directory .role{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze);font-weight:700}
+  .directory .who{font-size:16px}
+  .directory .who span{color:var(--muted)}
+  .directory .mail{font-size:15px;text-align:right}
+  .directory .mail a{white-space:nowrap}
+  @media (max-width:800px){.directory .row{grid-template-columns:1fr;gap:4px}.directory .mail{text-align:left}}
 </style>
 </helmet>
 <div style="min-height:100vh">
-  <div style="background:#FBF7EA;border-bottom:1px solid #dcdff0;padding:10px 48px;display:flex;justify-content:space-between;align-items:center;font-family:'Source Sans 3',sans-serif;font-size:13px">
-    <div style="display:flex;align-items:center;gap:12px"><img src="assets/luminara-logo.png" alt="Luminara" style="height:44px"><span style="font-weight:700;letter-spacing:0.06em">LUMINARA</span></div>
-    <div style="display:flex;gap:26px"><a href="#programs">Divisions</a><a href="#academy">Soulship Academy</a><a href="#consortium">Consortium</a><a href="#board">Board</a><a href="#about">About</a><a href="#join" style="background:#F4BE3B;color:#030F58;padding:8px 18px;font-weight:700">Become a Pioneer</a></div>
-  </div>
-  <div style="background:linear-gradient(180deg,#030F58 0%,#0E398F 70%,#0a2f7a 100%);color:#fff;padding:110px 48px 90px;text-align:center">
-    <div style="font-size:56px;font-weight:700;font-style:italic;line-height:1.15;max-width:900px;margin:0 auto">Who are we becoming?</div>
-    <div style="font-size:20px;font-style:italic;color:#c9d4ef;margin:26px auto 0;max-width:760px">Seekers of human transcendence, through technology and experience</div>
-    <div style="margin-top:44px"><a href="#join" style="background:#F4BE3B;color:#030F58;padding:14px 34px;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.08em">JOIN THE JOURNEY</a></div>
-  </div>
-  <div style="background:#fff;padding:70px 48px;text-align:center;border-bottom:1px solid #dcdff0">
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:14px">The Defining Question of Our Era</div>
-    <p style="font-size:19px;line-height:1.7;max-width:820px;margin:0 auto">Humanity holds tools of extraordinary power: artificial intelligence, immersive reality, spatial computing, biosensing. It also faces growing fragmentation, loneliness, and loss of meaning. The question before us is not only <em>what can we build?</em> It is <em>who are we becoming while we build it?</em></p>
-    <p style="font-size:15px;line-height:1.7;max-width:820px;margin:18px auto 0;color:#3a4370">Luminara is a nonprofit research, learning, and humanitarian institute convening pioneers in XR, AI, neuroscience, education, medicine, design, the arts, and human development, so that technology strengthens rather than diminishes our humanity.</p>
-  </div>
-  <div id="programs" style="padding:70px 48px;max-width:1100px;margin:0 auto">
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Six Divisions, One Mission</div>
-    <h2 style="font-size:32px;margin:0 0 30px">Illuminating the path of human becoming</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px">
-      <div style="border-top:5px solid #1A6073;background:#FBF7EA;padding:22px"><h3 style="margin:0 0 8px;font-size:19px;color:#1A6073">Research</h3><p style="font-size:14px;line-height:1.6;margin:0">Consciousness studies through social coherence: disciplined inquiry into the conditions, technologies, and experiences that support human potential, with methods published alongside findings.</p></div>
-      <div style="border-top:5px solid #66508E;background:#FBF7EA;padding:22px"><h3 style="margin:0 0 8px;font-size:19px;color:#66508E">Lumina Lingua</h3><p style="font-size:14px;line-height:1.6;margin:0">A new language of light, sound, movement, and form, carrying what ordinary speech cannot.</p></div>
-      <div style="border-top:5px solid #075BA8;background:#FBF7EA;padding:22px"><h3 style="margin:0 0 8px;font-size:19px;color:#075BA8">Technology, AI &amp; Information Systems</h3><p style="font-size:14px;line-height:1.6;margin:0">AI companions, biosensing, and spatial computing: modular sensing, visualization, and interaction architecture for perceiving self-state and connection.</p></div>
-      <div style="border-top:5px solid #D15B32;background:#FBF7EA;padding:22px"><h3 style="margin:0 0 8px;font-size:19px;color:#D15B32">Experience Architecture &amp; World Building</h3><p style="font-size:14px;line-height:1.6;margin:0">Immersive experience design and multisensory systems that cultivate empathy, imagination, and awe.</p></div>
-      <div style="border-top:5px solid #C58A32;background:#FBF7EA;padding:22px"><h3 style="margin:0 0 8px;font-size:19px;color:#A86C17">Community Service</h3><p style="font-size:14px;line-height:1.6;margin:0">What is learned is given. Discoveries move outward into humanitarian and community contexts.</p></div>
-    </div>
-  </div>
-  <div id="academy" style="background:#FBF7EA;padding:60px 48px">
-    <div style="max-width:1100px;margin:0 auto;display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
-      <div style="flex:2;min-width:300px"><div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#607A32;margin-bottom:10px">Soulship Academy</div>
-        <h2 style="font-size:28px;margin:0 0 12px">The institute's academy</h2>
-        <p style="font-size:15px;line-height:1.7;margin:0 0 10px">Immersive journeys, mentorship, and cohort learning, culminating in community service.</p>
-        <p style="font-size:13px;color:#3a4370;margin:0">Weekly gatherings: the Inspirational Series, Tuesdays at noon Pacific.</p></div>
-    </div>
-  </div>
-  <div style="padding:60px 48px;max-width:1100px;margin:0 auto">
-    <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Flagship Inquiry</div>
-    <h2 style="font-size:28px;margin:0 0 12px">HeartBeam</h2>
-    <p style="font-size:15px;line-height:1.7;max-width:820px;margin:0 0 10px">An experience and an experimental instrument: two or more people intend connection, express it, experience it, visualize it, and measure it. HeartBeam is designed to explore whether measurable physiological relationships change when people intentionally connect, and is assigned to Research as its accountable home, with every division contributing.</p>
-    <p style="font-size:13px;color:#3a4370;margin:0">Research is framed as inquiry; findings are published with their methods. Pioneers participate in sessions as contributors.</p>
-  </div>
-  <div id="consortium" style="padding:60px 48px;max-width:1100px;margin:0 auto">
-    <div style="display:flex;gap:40px;flex-wrap:wrap">
-      <div style="flex:1;min-width:280px"><div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Luminara Consortium of Light</div>
-        <p style="font-size:15px;line-height:1.7;margin:0">Partners, sponsors, and collaborating institutions advancing the mission together. Membership inquiries: <a href="mailto:tom.furness@luminara.institute">tom.furness@luminara.institute</a></p></div>
-      <div style="flex:1;min-width:280px"><div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">The Bridge</div>
-        <p style="font-size:15px;line-height:1.7;margin:0">Four Bridge Groups carry the institute's enabling functions: <span style="color:#334D3C;font-weight:600">Governance</span>, <span style="color:#7A5A1E;font-weight:600">Finance &amp; Fundraising</span>, <span style="color:#9B3F76;font-weight:600">Internal Communications</span>, and <span style="color:#2E8556;font-weight:600">Branding &amp; Outreach</span>.</p></div>
-    </div>
-  </div>
-  <div id="about" style="background:#FBF7EA;padding:60px 48px">
-    <div style="max-width:1100px;margin:0 auto;display:flex;gap:48px;flex-wrap:wrap">
-      <div style="flex:1;min-width:300px">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Board of Directors</div>
-        <p style="font-size:14.5px;line-height:1.9;margin:0">Thomas A. Furness III · Chair<br>Daniel Oestreich · Vice Chair<br>Michele Atwater · Secretary<br>Trond Nilsen · Treasurer<br>Mark Billinghurst · Dave Lorenzini · Marty Perlmutter · Drew Stone · Stacy Whittle · Directors<br><a href="#board" style="font-size:13px">Meet the board ↓</a></p>
-      </div>
-      <div style="flex:1;min-width:300px">
-        <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Lineage</div>
-        <p style="font-size:14.5px;line-height:1.7;margin:0">The institute grew from the Virtual World Society's futures work on a "Super Cockpit for the Mind" (2024), announced as a named initiative at AWE USA 2025, and became the Luminara Institute of Light, announced June 17, 2026. Luminara is a Washington nonprofit corporation.</p>
+  <header class="site-header">
+    <nav class="ribbon" aria-label="Divisions">
+      <a href="divisions/research.html" title="Research" style="background:#1A6073">Research</a>
+      <a href="divisions/technology.html" title="Technology, AI &amp; Information Systems" style="background:#075BA8">Technology</a>
+      <a href="divisions/world-building.html" title="Experience Architecture &amp; World Building" style="background:#D15B32">World Building</a>
+      <a href="divisions/lumina-lingua.html" title="Lumina Lingua" style="background:#66508E">Lumina Lingua</a>
+      <a href="divisions/the-light-school.html" title="The Light School" style="background:#607A32">The Light School</a>
+      <a href="divisions/community-service.html" title="Community Service" style="background:#C58A32;color:#030F58">Community Service</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div id="academy" class="school-hero">
+      <div class="school-photo"><img src="assets/light-school.jpg" alt="A brick school building with a clock and cupola"><div class="sign">Coming soon!</div></div>
+      <div class="school-banner">
+        <div class="container">
+          <h2>Where the research becomes a classroom</h2>
+        </div>
       </div>
     </div>
-  </div>
-  <div id="board" style="background:#fff;padding:60px 48px">
-    <div style="max-width:1100px;margin:0 auto">
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Board of Directors</div>
-      <h2 style="font-size:28px;margin:0 0 26px">The people carrying the light</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px">
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-tom-furness.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Thomas A. Furness III</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Chair</div><p style="font-size:13px;line-height:1.6;margin:0">For nearly six decades, Dr. Furness has built interfaces between humans, machines, minds, and hearts: advanced cockpits, virtual and augmented reality, wearable and retinal displays, photonics. His students and colleagues have started more than 25 companies in the VR/AR space; The Light School and Luminara continue his lifelong exploration of light as instrument and metaphor.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-dan-oestreich.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Daniel Oestreich</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Vice Chair</div><p style="font-size:13px;line-height:1.6;margin:0">A seasoned leadership consultant helping individuals, teams, and organizations liberate untapped potential through trust-building and communication. Co-author of <em>Driving Fear Out of the Workplace</em> and <em>The Courageous Messenger</em>.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-michele-atwater.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Michele Atwater</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Secretary</div><p style="font-size:13px;line-height:1.6;margin:0">A library-museum professional (MLIS, Emerging Technology) engaged in UX and usability research for immersive VR/XR spaces, with a background spanning information communities, stakeholder engagement, graphic arts, and early training in music, theatre, and dance.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-trond-nilsen.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Trond Nilsen</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Treasurer</div><p style="font-size:13px;line-height:1.6;margin:0">Engineer, scientist, game designer, and teacher (PhD, University of Washington), with pioneering AR strategy-game and command-and-control work at HITLab NZ. He helps lead Seattle VR, the Seattle Immersive Technology Association, the Virtual World Society, and the XR Guild.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-mark-billinghurst.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Mark Billinghurst</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Director</div><p style="font-size:13px;line-height:1.6;margin:0">Professor of human-computer interaction and IEEE Fellow; director of the Empathic Computing Laboratory, founder of HIT Lab NZ, and co-creator of the open-source ARToolKit. With over 650 research papers, he is among the most cited AR researchers in the world.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-dave-lorenzini.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Dave Lorenzini</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Director</div><p style="font-size:13px;line-height:1.6;margin:0">Builder of breakthrough XR, AI, and spatial computing technologies, including Keyhole (Google Earth) and ARc for Google X. As Director of Quantum Studio, he works on how AI understands and relates to physical space.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-marty-perlmutter.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Marty Perlmutter</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Director</div><p style="font-size:13px;line-height:1.6;margin:0">Interactive media pioneer: inventor of a sensory stimulation helmet in 1970, founder of Ghost Dance, and creator of the first interactive movie game. He works with Luminara to pioneer transcendent, transformative experiences as an alternative to first-person shooters.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-drew-stone.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Drew Stone</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Director</div><p style="font-size:13px;line-height:1.6;margin:0">Virtual and immersive technology specialist with deep expertise in interactive experiences, XR event production, and collaborative community building. At Luminara he stewards the brand and visual identity, from the core palette to the subdivision color system.</p></div></div>
-        <div style="display:flex;gap:16px;align-items:flex-start"><img src="assets/board/bod-stacy-whittle.jpg" alt="" style="flex:none;width:72px;height:72px;border-radius:50%;object-fit:cover"><div><h3 style="margin:0 0 2px;font-size:16px">Stacy Whittle</h3><div style="font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A86C17;margin-bottom:6px">Director</div><p style="font-size:13px;line-height:1.6;margin:0">Writer, director, actor, and producer who has lived in four countries and worked in more than a dozen, with an MPA from the Middlebury Institute and a career spanning international development. Her film work has received Telly and Anthem Awards.</p></div></div>
+
+    <div class="midnight-band" id="sessions">
+      <div class="container wuw">
+        <p class="side right">Sessions run every week, open to anyone</p>
+        <div class="mid"><span>Watch us work!</span></div>
+        <p class="side left">See how the institute practices what it studies</p>
       </div>
     </div>
-  </div>
-  <div style="background:#FBF7EA;border-top:1px solid #dcdff0;padding:56px 48px">
-    <div style="max-width:1100px;margin:0 auto">
-      <div style="font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:#A86C17;margin-bottom:10px">Record of Work</div>
-      <h2 style="font-size:28px;margin:0 0 12px">The institute shows its work</h2>
-      <p style="font-size:15px;line-height:1.7;max-width:820px;margin:0">Programs, sessions, and findings enter a public record: session summaries, research methods published alongside results, and the working documents of an institute building itself in the open. The record begins publishing here following the organizational meeting.</p>
+    <section id="work">
+      <div class="container">
+        <div class="work">
+          <div class="work-card" style="border-top-color:#66508E;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#D6CDD3 130%)">
+            <div class="when">1st and 3rd Wednesdays · 10:00 AM Pacific</div>
+            <h3>Pure Love Frequency</h3>
+            <p>Led by Olivier Maxted and Megan Selby of <a href="https://www.purelovefrequency.com/">Pure Love Frequency</a>.</p>
+            <div class="who">Olivier · <a href="mailto:olivier.maxted@luminara.institute">olivier.maxted@luminara.institute</a></div>
+          </div>
+          <div class="work-card" style="border-top-color:#D15B32;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#F0D0BC 130%)">
+            <div class="when">2nd and 4th Wednesdays · 10:00 AM Pacific</div>
+            <h3>Creativity Catalyst</h3>
+            <p>Led by David Sonnenschein.</p>
+            <div class="who">David · <a href="mailto:david.sonnenschein@luminara.institute">david.sonnenschein@luminara.institute</a></div>
+          </div>
+          <div class="work-card" style="border-top-color:#607A32;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#D4D8BC 130%)">
+            <div class="when">2nd and 3rd Tuesdays · 12:00 PM Pacific</div>
+            <h3>Inspirational Series</h3>
+            <p>Hosted by Stacy Whittle. <a href="https://forms.gle/pCTxjEJcWr4o9SycA">Sign up to present</a>.</p>
+            <div class="who">Stacy · <a href="mailto:stacy.whittle@luminara.institute">stacy.whittle@luminara.institute</a></div>
+          </div>
+          <div class="work-card" style="border-top-color:#1A6073;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#C3D1CC 130%)">
+            <div class="when">Mondays 9:00 AM · Wednesdays 5:00 PM Pacific</div>
+            <h3>Project HeartBeam</h3>
+            <p>Run by the Research division. Contact Drew Stone.</p>
+            <div class="who">Drew · <a href="mailto:drew.stone@luminara.institute">drew.stone@luminara.institute</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="calendar" class="cal-band">
+      <div class="container">
+        <div class="cal-head"><h2>Community Calendar</h2><div class="cal-month">September 2026 · all times Pacific</div></div>
+        <div class="cal-grid" role="grid" aria-label="September 2026">
+          <div class="cal-dow">Sun</div><div class="cal-dow">Mon</div><div class="cal-dow">Tue</div><div class="cal-dow">Wed</div><div class="cal-dow">Thu</div><div class="cal-dow">Fri</div><div class="cal-dow">Sat</div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell"><span class="cal-day">1</span><span class="chip all">12:00 PM · All Hands</span></div>
+          <div class="cal-cell"><span class="cal-day">2</span><span class="chip hb">5:00 PM · Project HeartBeam</span><span class="chip plf">10:00 AM · Unconditional Love Series</span></div>
+          <div class="cal-cell"><span class="cal-day">3</span></div>
+          <div class="cal-cell"><span class="cal-day">4</span></div>
+          <div class="cal-cell"><span class="cal-day">5</span></div>
+          <div class="cal-cell"><span class="cal-day">6</span></div>
+          <div class="cal-cell"><span class="cal-day">7</span><span class="chip hb">9:00 AM · Project HeartBeam</span></div>
+          <div class="cal-cell"><span class="cal-day">8</span><span class="chip ls">12:00 PM · Inspirational Series</span></div>
+          <div class="cal-cell"><span class="cal-day">9</span><span class="chip hb">5:00 PM · Project HeartBeam</span><span class="chip cc">10:00 AM · Creativity Catalyst</span><span class="chip ext">7:00 PM · LA SIGGRAPH Fireside Chat</span></div>
+          <div class="cal-cell"><span class="cal-day">10</span><span class="chip ext">10:00 AM · Earth Rights Institute: Peacebuilding Across Borders</span></div>
+          <div class="cal-cell"><span class="cal-day">11</span></div>
+          <div class="cal-cell"><span class="cal-day">12</span></div>
+          <div class="cal-cell"><span class="cal-day">13</span></div>
+          <div class="cal-cell"><span class="cal-day">14</span><span class="chip hb">9:00 AM · Project HeartBeam</span></div>
+          <div class="cal-cell"><span class="cal-day">15</span><span class="chip ls">12:00 PM · Inspirational Series: Skillshare</span></div>
+          <div class="cal-cell"><span class="cal-day">16</span><span class="chip hb">5:00 PM · Project HeartBeam</span><span class="chip plf">10:00 AM · Unconditional Love Series</span></div>
+          <div class="cal-cell"><span class="cal-day">17</span></div>
+          <div class="cal-cell"><span class="cal-day">18</span></div>
+          <div class="cal-cell"><span class="cal-day">19</span></div>
+          <div class="cal-cell"><span class="cal-day">20</span></div>
+          <div class="cal-cell"><span class="cal-day">21</span><span class="chip hb">9:00 AM · Project HeartBeam</span></div>
+          <div class="cal-cell"><span class="cal-day">22</span><span class="chip oh">12:00 PM · Office Hours with Tom Furness</span></div>
+          <div class="cal-cell"><span class="cal-day">23</span><span class="chip hb">5:00 PM · Project HeartBeam</span><span class="chip cc">10:00 AM · Creativity Catalyst</span></div>
+          <div class="cal-cell"><span class="cal-day">24</span></div>
+          <div class="cal-cell"><span class="cal-day">25</span></div>
+          <div class="cal-cell"><span class="cal-day">26</span></div>
+          <div class="cal-cell"><span class="cal-day">27</span></div>
+          <div class="cal-cell"><span class="cal-day">28</span><span class="chip hb">9:00 AM · Project HeartBeam</span></div>
+          <div class="cal-cell"><span class="cal-day">29</span><span class="chip oh">12:00 PM · Office Hours with Tom Furness</span></div>
+          <div class="cal-cell"><span class="cal-day">30</span><span class="chip hb">5:00 PM · Project HeartBeam</span></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+          <div class="cal-cell empty"></div>
+        </div>
+        <div class="cal-legend"><span><i class="chip ls"></i>The Light School</span><span><i class="chip plf"></i>Pure Love Frequency</span><span><i class="chip cc"></i>Creativity Catalyst</span><span><i class="chip hb"></i>Project HeartBeam</span><span><i class="chip oh"></i>Office Hours</span><span><i class="chip all"></i>All Hands</span><span><i class="chip ext"></i>Partner events</span></div>
+      </div>
+    </section>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Who are we becoming?</h1>
+        <p class="tagline">Seekers of human transcendence, through technology and experience</p>
+        <div class="actions"><a class="btn" href="#join">Become a Pioneer</a><a class="btn secondary" href="/charter">Read the Founding Charter</a></div>
+      </div>
+    </section>
+
+    <section id="board" style="padding:48px 0">
+      <div class="container">
+        <div class="eyebrow" style="text-align:center;margin-bottom:18px">Board of Directors</div>
+        <div class="board-row" id="board-row">
+          <button class="dot" type="button" data-i="0" aria-label="Thomas A. Furness III, Chair" aria-expanded="false"><img src="assets/board/bod-tom-furness.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="1" aria-label="Daniel Oestreich, Vice Chair" aria-expanded="false"><img src="assets/board/bod-dan-oestreich.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="2" aria-label="Michele Atwater, Secretary" aria-expanded="false"><img src="assets/board/bod-michele-atwater.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="3" aria-label="Trond Nilsen, Treasurer" aria-expanded="false"><img src="assets/board/bod-trond-nilsen.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="4" aria-label="Mark Billinghurst, Director" aria-expanded="false"><img src="assets/board/bod-mark-billinghurst.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="5" aria-label="Dave Lorenzini, Director" aria-expanded="false"><img src="assets/board/bod-dave-lorenzini.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="6" aria-label="Marty Perlmutter, Director" aria-expanded="false"><img src="assets/board/bod-marty-perlmutter.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="7" aria-label="Drew Stone, Director" aria-expanded="false"><img src="assets/board/bod-drew-stone.jpg" alt=""></button>
+          <button class="dot" type="button" data-i="8" aria-label="Stacy Whittle, Director" aria-expanded="false"><img src="assets/board/bod-stacy-whittle.jpg" alt=""></button>
+        </div>
+          <template id="bio-0" data-slug="tom-furness"><img class="pimg" src="assets/board/bod-tom-furness.jpg" alt=""><div class="ptext"><h3>Thomas A. Furness III</h3><div class="ptitle">Chair</div><p>For nearly six decades, Dr. Furness has built interfaces between humans, machines, minds, and hearts: advanced cockpits, virtual and augmented reality, wearable and retinal displays, photonics. His students and colleagues have started more than 25 companies in the VR/AR space; The Light School and Luminara continue his lifelong exploration of light as instrument and metaphor.</p></div></template>
+          <template id="bio-1" data-slug="dan-oestreich"><img class="pimg" src="assets/board/bod-dan-oestreich.jpg" alt=""><div class="ptext"><h3>Daniel Oestreich</h3><div class="ptitle">Vice Chair</div><p>A seasoned leadership consultant helping individuals, teams, and organizations liberate untapped potential through trust-building and communication. Co-author of <em>Driving Fear Out of the Workplace</em> and <em>The Courageous Messenger</em>.</p></div></template>
+          <template id="bio-2" data-slug="michele-atwater"><img class="pimg" src="assets/board/bod-michele-atwater.jpg" alt=""><div class="ptext"><h3>Michele Atwater</h3><div class="ptitle">Secretary</div><p>A library-museum professional (MLIS, Emerging Technology) engaged in UX and usability research for immersive VR/XR spaces, with a background spanning information communities, stakeholder engagement, graphic arts, and early training in music, theatre, and dance.</p></div></template>
+          <template id="bio-3" data-slug="trond-nilsen"><img class="pimg" src="assets/board/bod-trond-nilsen.jpg" alt=""><div class="ptext"><h3>Trond Nilsen</h3><div class="ptitle">Treasurer</div><p>Engineer, scientist, game designer, and teacher (PhD, University of Washington), with pioneering AR strategy-game and command-and-control work at HITLab NZ. He helps lead Seattle VR, the Seattle Immersive Technology Association, the Virtual World Society, and the XR Guild.</p></div></template>
+          <template id="bio-4" data-slug="mark-billinghurst"><img class="pimg" src="assets/board/bod-mark-billinghurst.jpg" alt=""><div class="ptext"><h3>Mark Billinghurst</h3><div class="ptitle">Director</div><p>Professor of human-computer interaction and IEEE Fellow; director of the Empathic Computing Laboratory, founder of HIT Lab NZ, and co-creator of the open-source ARToolKit. With over 650 research papers, he is among the most cited AR researchers in the world.</p></div></template>
+          <template id="bio-5" data-slug="dave-lorenzini"><img class="pimg" src="assets/board/bod-dave-lorenzini.jpg" alt=""><div class="ptext"><h3>Dave Lorenzini</h3><div class="ptitle">Director</div><p>Builder of breakthrough XR, AI, and spatial computing technologies, including Keyhole (Google Earth) and ARc for Google X. As Director of Quantum Studio, he works on how AI understands and relates to physical space.</p></div></template>
+          <template id="bio-6" data-slug="marty-perlmutter"><img class="pimg" src="assets/board/bod-marty-perlmutter.jpg" alt=""><div class="ptext"><h3>Marty Perlmutter</h3><div class="ptitle">Director</div><p>Interactive media pioneer: inventor of a sensory stimulation helmet in 1970, founder of Ghost Dance, and creator of the first interactive movie game. He works with Luminara to pioneer transcendent, transformative experiences as an alternative to first-person shooters.</p></div></template>
+          <template id="bio-7" data-slug="drew-stone"><img class="pimg" src="assets/board/bod-drew-stone.jpg" alt=""><div class="ptext"><h3>Drew Stone</h3><div class="ptitle">Director</div><p>Virtual and immersive technology specialist with deep expertise in interactive experiences, XR event production, and collaborative community building. At Luminara he stewards the brand and visual identity, from the core palette to the subdivision color system.</p></div></template>
+          <template id="bio-8" data-slug="stacy-whittle"><img class="pimg" src="assets/board/bod-stacy-whittle.jpg" alt=""><div class="ptext"><h3>Stacy Whittle</h3><div class="ptitle">Director</div><p>Writer, director, actor, and producer who has lived in four countries and worked in more than a dozen, with an MPA from the Middlebury Institute and a career spanning international development. Her film work has received Telly and Anthem Awards.</p></div></template>
+        <div class="hover-card" id="hover-card" role="region" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container narrow stack" style="text-align:center">
+        <p class="muted">Luminara is a nonprofit research, learning, and humanitarian institute convening pioneers in XR, AI, neuroscience, education, medicine, design, the arts, and human development, so that technology strengthens rather than diminishes our humanity.</p>
+        <p class="muted small">Luminara Institute of Light was formed as a Washington nonprofit corporation on May 7, 2026, and announced in June 2026.</p>
+      </div>
+    </section>
+
+    <section id="join" style="background:var(--midnight);color:#fff;text-align:center">
+      <div class="container narrow">
+        <h2>Pioneer Pathways</h2>
+        <p class="tagline" style="font-style:italic;color:rgba(251,247,234,0.82);font-size:20px;margin:10px auto 0;max-width:640px">Take one step and we'll light the next</p>
+        <p style="color:rgba(251,247,234,0.82);max-width:640px;margin:16px auto 0">Subscribe to the newsletter, attend a session, join a program. Every Pioneer has a place to begin and a visible path forward.</p>
+        </div>
+      <svg class="trajectory" viewBox="0 0 1600 560" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pioneer pathway: Subscriber, Attendee, Pioneer, Contributor, Partner"><polygon points="1291.0,52.6 1291.7,54.3 1293.4,55.0 1291.7,55.7 1291.0,57.4 1290.3,55.7 1288.6,55.0 1290.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1493.0,379.6 1494.0,382.0 1496.4,383.0 1494.0,384.0 1493.0,386.4 1492.0,384.0 1489.6,383.0 1492.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="239.0,194.6 240.3,197.7 243.4,199.0 240.3,200.3 239.0,203.4 237.7,200.3 234.6,199.0 237.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="1497.0,108.6 1497.7,110.3 1499.4,111.0 1497.7,111.7 1497.0,113.4 1496.3,111.7 1494.6,111.0 1496.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="531.0,211.6 532.0,214.0 534.4,215.0 532.0,216.0 531.0,218.4 530.0,216.0 527.6,215.0 530.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="413.0,138.6 414.3,141.7 417.4,143.0 414.3,144.3 413.0,147.4 411.7,144.3 408.6,143.0 411.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="1399.0,276.6 1399.7,278.3 1401.4,279.0 1399.7,279.7 1399.0,281.4 1398.3,279.7 1396.6,279.0 1398.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="1377.0,267.6 1378.0,270.0 1380.4,271.0 1378.0,272.0 1377.0,274.4 1376.0,272.0 1373.6,271.0 1376.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1371.0,530.6 1372.3,533.7 1375.4,535.0 1372.3,536.3 1371.0,539.4 1369.7,536.3 1366.6,535.0 1369.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="933.0,220.6 933.7,222.3 935.4,223.0 933.7,223.7 933.0,225.4 932.3,223.7 930.6,223.0 932.3,222.3" fill="#FBF7EA" opacity="0.4"/><polygon points="959.0,435.6 960.0,438.0 962.4,439.0 960.0,440.0 959.0,442.4 958.0,440.0 955.6,439.0 958.0,438.0" fill="#FBF7EA" opacity="0.5"/><polygon points="1257.0,26.6 1258.3,29.7 1261.4,31.0 1258.3,32.3 1257.0,35.4 1255.7,32.3 1252.6,31.0 1255.7,29.7" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="611.0,52.6 611.7,54.3 613.4,55.0 611.7,55.7 611.0,57.4 610.3,55.7 608.6,55.0 610.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1453.0,379.6 1454.0,382.0 1456.4,383.0 1454.0,384.0 1453.0,386.4 1452.0,384.0 1449.6,383.0 1452.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="519.0,194.6 520.3,197.7 523.4,199.0 520.3,200.3 519.0,203.4 517.7,200.3 514.6,199.0 517.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="1137.0,108.6 1137.7,110.3 1139.4,111.0 1137.7,111.7 1137.0,113.4 1136.3,111.7 1134.6,111.0 1136.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1451.0,211.6 1452.0,214.0 1454.4,215.0 1452.0,216.0 1451.0,218.4 1450.0,216.0 1447.6,215.0 1450.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="373.0,138.6 374.3,141.7 377.4,143.0 374.3,144.3 373.0,147.4 371.7,144.3 368.6,143.0 371.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="79.0,276.6 79.7,278.3 81.4,279.0 79.7,279.7 79.0,281.4 78.3,279.7 76.6,279.0 78.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="1017.0,267.6 1018.0,270.0 1020.4,271.0 1018.0,272.0 1017.0,274.4 1016.0,272.0 1013.6,271.0 1016.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="691.0,530.6 692.3,533.7 695.4,535.0 692.3,536.3 691.0,539.4 689.7,536.3 686.6,535.0 689.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="893.0,220.6 893.7,222.3 895.4,223.0 893.7,223.7 893.0,225.4 892.3,223.7 890.6,223.0 892.3,222.3" fill="#FBF7EA" opacity="0.4"/><polygon points="1239.0,435.6 1240.0,438.0 1242.4,439.0 1240.0,440.0 1239.0,442.4 1238.0,440.0 1235.6,439.0 1238.0,438.0" fill="#FBF7EA" opacity="0.5"/><polygon points="897.0,26.6 898.3,29.7 901.4,31.0 898.3,32.3 897.0,35.4 895.7,32.3 892.6,31.0 895.7,29.7" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1531.0,52.6 1531.7,54.3 1533.4,55.0 1531.7,55.7 1531.0,57.4 1530.3,55.7 1528.6,55.0 1530.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1413.0,379.6 1414.0,382.0 1416.4,383.0 1414.0,384.0 1413.0,386.4 1412.0,384.0 1409.6,383.0 1412.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="799.0,194.6 800.3,197.7 803.4,199.0 800.3,200.3 799.0,203.4 797.7,200.3 794.6,199.0 797.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="777.0,108.6 777.7,110.3 779.4,111.0 777.7,111.7 777.0,113.4 776.3,111.7 774.6,111.0 776.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="771.0,211.6 772.0,214.0 774.4,215.0 772.0,216.0 771.0,218.4 770.0,216.0 767.6,215.0 770.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="333.0,138.6 334.3,141.7 337.4,143.0 334.3,144.3 333.0,147.4 331.7,144.3 328.6,143.0 331.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="359.0,276.6 359.7,278.3 361.4,279.0 359.7,279.7 359.0,281.4 358.3,279.7 356.6,279.0 358.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="657.0,267.6 658.0,270.0 660.4,271.0 658.0,272.0 657.0,274.4 656.0,272.0 653.6,271.0 656.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="11.0,530.6 12.3,533.7 15.4,535.0 12.3,536.3 11.0,539.4 9.7,536.3 6.6,535.0 9.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="853.0,220.6 853.7,222.3 855.4,223.0 853.7,223.7 853.0,225.4 852.3,223.7 850.6,223.0 852.3,222.3" fill="#FBF7EA" opacity="0.4"/><polygon points="1519.0,435.6 1520.0,438.0 1522.4,439.0 1520.0,440.0 1519.0,442.4 1518.0,440.0 1515.6,439.0 1518.0,438.0" fill="#FBF7EA" opacity="0.5"/><polygon points="537.0,26.6 538.3,29.7 541.4,31.0 538.3,32.3 537.0,35.4 535.7,32.3 532.6,31.0 535.7,29.7" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="851.0,52.6 851.7,54.3 853.4,55.0 851.7,55.7 851.0,57.4 850.3,55.7 848.6,55.0 850.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1373.0,379.6 1374.0,382.0 1376.4,383.0 1374.0,384.0 1373.0,386.4 1372.0,384.0 1369.6,383.0 1372.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="1079.0,194.6 1080.3,197.7 1083.4,199.0 1080.3,200.3 1079.0,203.4 1077.7,200.3 1074.6,199.0 1077.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="417.0,108.6 417.7,110.3 419.4,111.0 417.7,111.7 417.0,113.4 416.3,111.7 414.6,111.0 416.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="91.0,211.6 92.0,214.0 94.4,215.0 92.0,216.0 91.0,218.4 90.0,216.0 87.6,215.0 90.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="293.0,138.6 294.3,141.7 297.4,143.0 294.3,144.3 293.0,147.4 291.7,144.3 288.6,143.0 291.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="639.0,276.6 639.7,278.3 641.4,279.0 639.7,279.7 639.0,281.4 638.3,279.7 636.6,279.0 638.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="297.0,267.6 298.0,270.0 300.4,271.0 298.0,272.0 297.0,274.4 296.0,272.0 293.6,271.0 296.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="931.0,530.6 932.3,533.7 935.4,535.0 932.3,536.3 931.0,539.4 929.7,536.3 926.6,535.0 929.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="813.0,220.6 813.7,222.3 815.4,223.0 813.7,223.7 813.0,225.4 812.3,223.7 810.6,223.0 812.3,222.3" fill="#FBF7EA" opacity="0.4"/><polygon points="199.0,435.6 200.0,438.0 202.4,439.0 200.0,440.0 199.0,442.4 198.0,440.0 195.6,439.0 198.0,438.0" fill="#FBF7EA" opacity="0.5"/><polygon points="177.0,26.6 178.3,29.7 181.4,31.0 178.3,32.3 177.0,35.4 175.7,32.3 172.6,31.0 175.7,29.7" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="171.0,52.6 171.7,54.3 173.4,55.0 171.7,55.7 171.0,57.4 170.3,55.7 168.6,55.0 170.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1333.0,379.6 1334.0,382.0 1336.4,383.0 1334.0,384.0 1333.0,386.4 1332.0,384.0 1329.6,383.0 1332.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="1359.0,194.6 1360.3,197.7 1363.4,199.0 1360.3,200.3 1359.0,203.4 1357.7,200.3 1354.6,199.0 1357.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="57.0,108.6 57.7,110.3 59.4,111.0 57.7,111.7 57.0,113.4 56.3,111.7 54.6,111.0 56.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1011.0,211.6 1012.0,214.0 1014.4,215.0 1012.0,216.0 1011.0,218.4 1010.0,216.0 1007.6,215.0 1010.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="253.0,138.6 254.3,141.7 257.4,143.0 254.3,144.3 253.0,147.4 251.7,144.3 248.6,143.0 251.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="919.0,276.6 919.7,278.3 921.4,279.0 919.7,279.7 919.0,281.4 918.3,279.7 916.6,279.0 918.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="1537.0,267.6 1538.0,270.0 1540.4,271.0 1538.0,272.0 1537.0,274.4 1536.0,272.0 1533.6,271.0 1536.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="251.0,530.6 252.3,533.7 255.4,535.0 252.3,536.3 251.0,539.4 249.7,536.3 246.6,535.0 249.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="773.0,220.6 773.7,222.3 775.4,223.0 773.7,223.7 773.0,225.4 772.3,223.7 770.6,223.0 772.3,222.3" fill="#FBF7EA" opacity="0.4"/><polygon points="479.0,435.6 480.0,438.0 482.4,439.0 480.0,440.0 479.0,442.4 478.0,440.0 475.6,439.0 478.0,438.0" fill="#FBF7EA" opacity="0.5"/><polygon points="1417.0,26.6 1418.3,29.7 1421.4,31.0 1418.3,32.3 1417.0,35.4 1415.7,32.3 1412.6,31.0 1415.7,29.7" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1091.0,52.6 1091.7,54.3 1093.4,55.0 1091.7,55.7 1091.0,57.4 1090.3,55.7 1088.6,55.0 1090.3,54.3" fill="#FBF7EA" opacity="0.3"/><polygon points="1293.0,379.6 1294.0,382.0 1296.4,383.0 1294.0,384.0 1293.0,386.4 1292.0,384.0 1289.6,383.0 1292.0,382.0" fill="#FBF7EA" opacity="0.4"/><polygon points="39.0,194.6 40.3,197.7 43.4,199.0 40.3,200.3 39.0,203.4 37.7,200.3 34.6,199.0 37.7,197.7" fill="#FBF7EA" opacity="0.5"/><polygon points="1297.0,108.6 1297.7,110.3 1299.4,111.0 1297.7,111.7 1297.0,113.4 1296.3,111.7 1294.6,111.0 1296.3,110.3" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="331.0,211.6 332.0,214.0 334.4,215.0 332.0,216.0 331.0,218.4 330.0,216.0 327.6,215.0 330.0,214.0" fill="#FBF7EA" opacity="0.3"/><polygon points="213.0,138.6 214.3,141.7 217.4,143.0 214.3,144.3 213.0,147.4 211.7,144.3 208.6,143.0 211.7,141.7" fill="#FBF7EA" opacity="0.4"/><polygon points="1199.0,276.6 1199.7,278.3 1201.4,279.0 1199.7,279.7 1199.0,281.4 1198.3,279.7 1196.6,279.0 1198.3,278.3" fill="#FBF7EA" opacity="0.5"/><polygon points="1177.0,267.6 1178.0,270.0 1180.4,271.0 1178.0,272.0 1177.0,274.4 1176.0,272.0 1173.6,271.0 1176.0,270.0" fill="#FBF7EA" opacity="0.6000000000000001"/><polygon points="1171.0,530.6 1172.3,533.7 1175.4,535.0 1172.3,536.3 1171.0,539.4 1169.7,536.3 1166.6,535.0 1169.7,533.7" fill="#FBF7EA" opacity="0.3"/><polygon points="733.0,220.6 733.7,222.3 735.4,223.0 733.7,223.7 733.0,225.4 732.3,223.7 730.6,223.0 732.3,222.3" fill="#FBF7EA" opacity="0.4"/><path d="M60,470 Q820,470 1480,110" fill="none" stroke="#F4BE3B" stroke-width="22" opacity=".12"/><path d="M60,470 Q820,470 1480,110" fill="none" stroke="#F4BE3B" stroke-width="4" opacity=".95"/><g class="ms" data-i="0" tabindex="0" role="button" aria-label="Subscriber"><circle cx="166" cy="468" r="24" fill="#1A6073" stroke="#F4BE3B" stroke-width="4"/><text x="166" y="477" text-anchor="middle" class="tnum">1</text><text x="166" y="526" text-anchor="middle" class="tlbl">Subscriber</text></g><g class="ms" data-i="1" tabindex="0" role="button" aria-label="Attendee"><circle cx="463" cy="444" r="24" fill="#075BA8" stroke="#F4BE3B" stroke-width="4"/><text x="463" y="453" text-anchor="middle" class="tnum">2</text><text x="463" y="502" text-anchor="middle" class="tlbl">Attendee</text></g><g class="ms" data-i="2" tabindex="0" role="button" aria-label="Pioneer"><circle cx="781" cy="384" r="24" fill="#D15B32" stroke="#F4BE3B" stroke-width="4"/><text x="781" y="393" text-anchor="middle" class="tnum">3</text><text x="781" y="340" text-anchor="middle" class="tlbl">Pioneer</text></g><g class="ms" data-i="3" tabindex="0" role="button" aria-label="Contributor"><circle cx="1089" cy="289" r="24" fill="#66508E" stroke="#F4BE3B" stroke-width="4"/><text x="1089" y="298" text-anchor="middle" class="tnum">4</text><text x="1089" y="245" text-anchor="middle" class="tlbl">Contributor</text></g><g class="ms" data-i="4" tabindex="0" role="button" aria-label="Partner"><circle cx="1374" cy="165" r="24" fill="#607A32" stroke="#F4BE3B" stroke-width="4"/><text x="1374" y="174" text-anchor="middle" class="tnum">5</text><text x="1374" y="121" text-anchor="middle" class="tlbl">Partner</text></g><path d="M1480,110 L1550,80 L1502,150 Z" fill="#F4BE3B"/><polygon points="1580.0,48.0 1584.8,59.2 1596.0,64.0 1584.8,68.8 1580.0,80.0 1575.2,68.8 1564.0,64.0 1575.2,59.2" fill="#F4BE3B" opacity="1"/><polygon points="1520.0,191.0 1522.7,197.3 1529.0,200.0 1522.7,202.7 1520.0,209.0 1517.3,202.7 1511.0,200.0 1517.3,197.3" fill="#F4BE3B" opacity="1"/><polygon points="1390.0,62.0 1392.4,67.6 1398.0,70.0 1392.4,72.4 1390.0,78.0 1387.6,72.4 1382.0,70.0 1387.6,67.6" fill="#F4BE3B" opacity="1"/><polygon points="1540.0,14.0 1541.8,18.2 1546.0,20.0 1541.8,21.8 1540.0,26.0 1538.2,21.8 1534.0,20.0 1538.2,18.2" fill="#F4BE3B" opacity="1"/></svg>
+      <template id="ms-0" data-color="#1A6073"><div class="eyebrow" style="color:#1A6073">1 · Subscriber</div><h3>Okay, this part is easy.</h3><p>You give us your email and we start telling you about the sessions, the people, the weird and wonderful things being built. That is it. No homework, no pressure. You get to lurk in the best possible way and watch a whole institute come to life in your inbox.</p><p class="next"><span>Next step</span> Come to one session.</p><blockquote class="q">"I lurked for two months before I said a word. Best two months of lurking I have ever done."<cite>Alley Till, who started as a Subscriber</cite></blockquote></template><template id="ms-1" data-color="#075BA8"><div class="eyebrow" style="color:#075BA8">2 · Attendee</div><h3>You came! You are here now.</h3><p>Sessions are on Zoom, so you can show up from your dorm in socks. One Tuesday it is a filmmaker, the next it is someone wiring sensors into a glove. You do not need to know anything yet. You just need to be curious, and you already are, or you would not be reading this.</p><p class="next"><span>Next step</span> Fill in a member profile and become a Pioneer.</p><blockquote class="q">"I turned my camera on once and Tom asked what I thought. I had a thought. That was the whole trick."<cite>Alley Till, who started as a Subscriber</cite></blockquote></template><template id="ms-2" data-color="#D15B32"><div class="eyebrow" style="color:#D15B32">3 · Pioneer</div><h3>This is the good part.</h3><p>You put a name and a face on file, and you pick a small first job: co-host a session, test something no one outside has seen yet, sit in on a language circle. Real work on a real thing, with people who will remember you did it. You are not a visitor anymore. You are one of us.</p><p class="next"><span>Next step</span> Take an entry role in a division or a Bridge Group.</p><blockquote class="q">"Nobody hands you a badge. One day you just notice everyone knows your name."<cite>Alley Till, who started as a Subscriber</cite></blockquote></template><template id="ms-3" data-color="#66508E"><div class="eyebrow" style="color:#66508E">4 · Contributor</div><h3>Now they are counting on you.</h3><p>You carry a real role in a division or a Bridge Group, and what you do goes into the record the institute publishes, with your name on it. When somebody asks what you did this year, you will have an answer that surprises them. It surprised me.</p><p class="next"><span>Next step</span> Grow into a lead seat, a Project HeartBeam cohort, or a Community Service project.</p><blockquote class="q">"I built an org from scratch at my kitchen table. It is on the website. Go look."<cite>Alley Till, who started as a Subscriber</cite></blockquote></template><template id="ms-4" data-color="#607A32"><div class="eyebrow" style="color:#607A32">5 · Partner</div><h3>You help keep the lights on.</h3><p>Partners are the ones who make the next thing possible: your lab, your department, your company, or just you, deciding this work should exist and helping it. The Consortium of Light is where that happens. You will have earned a seat there.</p><p class="next"><span>Next step</span> The Consortium of Light.</p><blockquote class="q">"The people at the top of this ladder started at the bottom of it. That is the whole point."<cite>Alley Till, who started as a Subscriber</cite></blockquote></template>
+      <div class="ms-card" id="ms-card" role="region" aria-live="polite" hidden></div>
+      <div class="container narrow"><a class="btn" href="mailto:alley.till@luminara.institute">Get Started</a></div>
+    </section>
+
+    <section id="first-100" class="first100">
+      <svg class="spray" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><polygon points="844.0,390.4 844.5,391.5 845.6,392.0 844.5,392.5 844.0,393.6 843.5,392.5 842.4,392.0 843.5,391.5" fill="#FBF7EA" opacity="0.18"/><polygon points="53.0,520.3 53.8,522.2 55.7,523.0 53.8,523.8 53.0,525.7 52.2,523.8 50.3,523.0 52.2,522.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1110.0,466.2 1111.1,468.9 1113.8,470.0 1111.1,471.1 1110.0,473.8 1108.9,471.1 1106.2,470.0 1108.9,468.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1271.0,604.1 1272.5,607.5 1275.9,609.0 1272.5,610.5 1271.0,613.9 1269.5,610.5 1266.1,609.0 1269.5,607.5" fill="#FBF7EA" opacity="0.54"/><polygon points="424.0,150.4 424.5,151.5 425.6,152.0 424.5,152.5 424.0,153.6 423.5,152.5 422.4,152.0 423.5,151.5" fill="#FBF7EA" opacity="0.18"/><polygon points="193.0,40.3 193.8,42.2 195.7,43.0 193.8,43.8 193.0,45.7 192.2,43.8 190.3,43.0 192.2,42.2" fill="#FBF7EA" opacity="0.30"/><polygon points="130.0,206.2 131.1,208.9 133.8,210.0 131.1,211.1 130.0,213.8 128.9,211.1 126.2,210.0 128.9,208.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1131.0,84.1 1132.5,87.5 1135.9,89.0 1132.5,90.5 1131.0,93.9 1129.5,90.5 1126.1,89.0 1129.5,87.5" fill="#FBF7EA" opacity="0.54"/><polygon points="4.0,510.4 4.5,511.5 5.6,512.0 4.5,512.5 4.0,513.6 3.5,512.5 2.4,512.0 3.5,511.5" fill="#FBF7EA" opacity="0.18"/><polygon points="333.0,60.3 333.8,62.2 335.7,63.0 333.8,63.8 333.0,65.7 332.2,63.8 330.3,63.0 332.2,62.2" fill="#FBF7EA" opacity="0.30"/><polygon points="550.0,246.2 551.1,248.9 553.8,250.0 551.1,251.1 550.0,253.8 548.9,251.1 546.2,250.0 548.9,248.9" fill="#FBF7EA" opacity="0.42"/><polygon points="991.0,164.1 992.5,167.5 995.9,169.0 992.5,170.5 991.0,173.9 989.5,170.5 986.1,169.0 989.5,167.5" fill="#FBF7EA" opacity="0.54"/><polygon points="984.0,670.4 984.5,671.5 985.6,672.0 984.5,672.5 984.0,673.6 983.5,672.5 982.4,672.0 983.5,671.5" fill="#FBF7EA" opacity="0.18"/><polygon points="473.0,380.3 473.8,382.2 475.7,383.0 473.8,383.8 473.0,385.7 472.2,383.8 470.3,383.0 472.2,382.2" fill="#FBF7EA" opacity="0.30"/><polygon points="970.0,186.2 971.1,188.9 973.8,190.0 971.1,191.1 970.0,193.8 968.9,191.1 966.2,190.0 968.9,188.9" fill="#FBF7EA" opacity="0.42"/><polygon points="851.0,44.1 852.5,47.5 855.9,49.0 852.5,50.5 851.0,53.9 849.5,50.5 846.1,49.0 849.5,47.5" fill="#FBF7EA" opacity="0.54"/><polygon points="564.0,430.4 564.5,431.5 565.6,432.0 564.5,432.5 564.0,433.6 563.5,432.5 562.4,432.0 563.5,431.5" fill="#FBF7EA" opacity="0.18"/><polygon points="613.0,600.3 613.8,602.2 615.7,603.0 613.8,603.8 613.0,605.7 612.2,603.8 610.3,603.0 612.2,602.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1390.0,626.2 1391.1,628.9 1393.8,630.0 1391.1,631.1 1390.0,633.8 1388.9,631.1 1386.2,630.0 1388.9,628.9" fill="#FBF7EA" opacity="0.42"/><polygon points="711.0,224.1 712.5,227.5 715.9,229.0 712.5,230.5 711.0,233.9 709.5,230.5 706.1,229.0 709.5,227.5" fill="#FBF7EA" opacity="0.54"/><polygon points="144.0,90.4 144.5,91.5 145.6,92.0 144.5,92.5 144.0,93.6 143.5,92.5 142.4,92.0 143.5,91.5" fill="#FBF7EA" opacity="0.18"/><polygon points="753.0,620.3 753.8,622.2 755.7,623.0 753.8,623.8 753.0,625.7 752.2,623.8 750.3,623.0 752.2,622.2" fill="#FBF7EA" opacity="0.30"/><polygon points="410.0,666.2 411.1,668.9 413.8,670.0 411.1,671.1 410.0,673.8 408.9,671.1 406.2,670.0 408.9,668.9" fill="#FBF7EA" opacity="0.42"/><polygon points="571.0,304.1 572.5,307.5 575.9,309.0 572.5,310.5 571.0,313.9 569.5,310.5 566.1,309.0 569.5,307.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1124.0,250.4 1124.5,251.5 1125.6,252.0 1124.5,252.5 1124.0,253.6 1123.5,252.5 1122.4,252.0 1123.5,251.5" fill="#FBF7EA" opacity="0.18"/><polygon points="893.0,240.3 893.8,242.2 895.7,243.0 893.8,243.8 893.0,245.7 892.2,243.8 890.3,243.0 892.2,242.2" fill="#FBF7EA" opacity="0.30"/><polygon points="830.0,606.2 831.1,608.9 833.8,610.0 831.1,611.1 830.0,613.8 828.9,611.1 826.2,610.0 828.9,608.9" fill="#FBF7EA" opacity="0.42"/><polygon points="431.0,184.1 432.5,187.5 435.9,189.0 432.5,190.5 431.0,193.9 429.5,190.5 426.1,189.0 429.5,187.5" fill="#FBF7EA" opacity="0.54"/><polygon points="704.0,10.4 704.5,11.5 705.6,12.0 704.5,12.5 704.0,13.6 703.5,12.5 702.4,12.0 703.5,11.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1033.0,460.3 1033.8,462.2 1035.7,463.0 1033.8,463.8 1033.0,465.7 1032.2,463.8 1030.3,463.0 1032.2,462.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1250.0,346.2 1251.1,348.9 1253.8,350.0 1251.1,351.1 1250.0,353.8 1248.9,351.1 1246.2,350.0 1248.9,348.9" fill="#FBF7EA" opacity="0.42"/><polygon points="291.0,364.1 292.5,367.5 295.9,369.0 292.5,370.5 291.0,373.9 289.5,370.5 286.1,369.0 289.5,367.5" fill="#FBF7EA" opacity="0.54"/><polygon points="284.0,370.4 284.5,371.5 285.6,372.0 284.5,372.5 284.0,373.6 283.5,372.5 282.4,372.0 283.5,371.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1173.0,480.3 1173.8,482.2 1175.7,483.0 1173.8,483.8 1173.0,485.7 1172.2,483.8 1170.3,483.0 1172.2,482.2" fill="#FBF7EA" opacity="0.30"/><polygon points="270.0,386.2 271.1,388.9 273.8,390.0 271.1,391.1 270.0,393.8 268.9,391.1 266.2,390.0 268.9,388.9" fill="#FBF7EA" opacity="0.42"/><polygon points="151.0,444.1 152.5,447.5 155.9,449.0 152.5,450.5 151.0,453.9 149.5,450.5 146.1,449.0 149.5,447.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1264.0,530.4 1264.5,531.5 1265.6,532.0 1264.5,532.5 1264.0,533.6 1263.5,532.5 1262.4,532.0 1263.5,531.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1313.0,100.3 1313.8,102.2 1315.7,103.0 1313.8,103.8 1313.0,105.7 1312.2,103.8 1310.3,103.0 1312.2,102.2" fill="#FBF7EA" opacity="0.30"/><polygon points="690.0,326.2 691.1,328.9 693.8,330.0 691.1,331.1 690.0,333.8 688.9,331.1 686.2,330.0 688.9,328.9" fill="#FBF7EA" opacity="0.42"/><polygon points="11.0,324.1 12.5,327.5 15.9,329.0 12.5,330.5 11.0,333.9 9.5,330.5 6.1,329.0 9.5,327.5" fill="#FBF7EA" opacity="0.54"/><polygon points="844.0,290.4 844.5,291.5 845.6,292.0 844.5,292.5 844.0,293.6 843.5,292.5 842.4,292.0 843.5,291.5" fill="#FBF7EA" opacity="0.18"/><polygon points="53.0,320.3 53.8,322.2 55.7,323.0 53.8,323.8 53.0,325.7 52.2,323.8 50.3,323.0 52.2,322.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1110.0,66.2 1111.1,68.9 1113.8,70.0 1111.1,71.1 1110.0,73.8 1108.9,71.1 1106.2,70.0 1108.9,68.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1271.0,504.1 1272.5,507.5 1275.9,509.0 1272.5,510.5 1271.0,513.9 1269.5,510.5 1266.1,509.0 1269.5,507.5" fill="#FBF7EA" opacity="0.54"/><polygon points="424.0,650.4 424.5,651.5 425.6,652.0 424.5,652.5 424.0,653.6 423.5,652.5 422.4,652.0 423.5,651.5" fill="#FBF7EA" opacity="0.18"/><polygon points="193.0,340.3 193.8,342.2 195.7,343.0 193.8,343.8 193.0,345.7 192.2,343.8 190.3,343.0 192.2,342.2" fill="#FBF7EA" opacity="0.30"/><polygon points="130.0,106.2 131.1,108.9 133.8,110.0 131.1,111.1 130.0,113.8 128.9,111.1 126.2,110.0 128.9,108.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1131.0,584.1 1132.5,587.5 1135.9,589.0 1132.5,590.5 1131.0,593.9 1129.5,590.5 1126.1,589.0 1129.5,587.5" fill="#FBF7EA" opacity="0.54"/><polygon points="4.0,110.4 4.5,111.5 5.6,112.0 4.5,112.5 4.0,113.6 3.5,112.5 2.4,112.0 3.5,111.5" fill="#FBF7EA" opacity="0.18"/><polygon points="333.0,660.3 333.8,662.2 335.7,663.0 333.8,663.8 333.0,665.7 332.2,663.8 330.3,663.0 332.2,662.2" fill="#FBF7EA" opacity="0.30"/><polygon points="550.0,46.2 551.1,48.9 553.8,50.0 551.1,51.1 550.0,53.8 548.9,51.1 546.2,50.0 548.9,48.9" fill="#FBF7EA" opacity="0.42"/><polygon points="991.0,464.1 992.5,467.5 995.9,469.0 992.5,470.5 991.0,473.9 989.5,470.5 986.1,469.0 989.5,467.5" fill="#FBF7EA" opacity="0.54"/><polygon points="984.0,570.4 984.5,571.5 985.6,572.0 984.5,572.5 984.0,573.6 983.5,572.5 982.4,572.0 983.5,571.5" fill="#FBF7EA" opacity="0.18"/><polygon points="473.0,180.3 473.8,182.2 475.7,183.0 473.8,183.8 473.0,185.7 472.2,183.8 470.3,183.0 472.2,182.2" fill="#FBF7EA" opacity="0.30"/><polygon points="970.0,486.2 971.1,488.9 973.8,490.0 971.1,491.1 970.0,493.8 968.9,491.1 966.2,490.0 968.9,488.9" fill="#FBF7EA" opacity="0.42"/><polygon points="851.0,644.1 852.5,647.5 855.9,649.0 852.5,650.5 851.0,653.9 849.5,650.5 846.1,649.0 849.5,647.5" fill="#FBF7EA" opacity="0.54"/><polygon points="564.0,230.4 564.5,231.5 565.6,232.0 564.5,232.5 564.0,233.6 563.5,232.5 562.4,232.0 563.5,231.5" fill="#FBF7EA" opacity="0.18"/><polygon points="613.0,200.3 613.8,202.2 615.7,203.0 613.8,203.8 613.0,205.7 612.2,203.8 610.3,203.0 612.2,202.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1390.0,526.2 1391.1,528.9 1393.8,530.0 1391.1,531.1 1390.0,533.8 1388.9,531.1 1386.2,530.0 1388.9,528.9" fill="#FBF7EA" opacity="0.42"/><polygon points="711.0,24.1 712.5,27.5 715.9,29.0 712.5,30.5 711.0,33.9 709.5,30.5 706.1,29.0 709.5,27.5" fill="#FBF7EA" opacity="0.54"/><polygon points="144.0,390.4 144.5,391.5 145.6,392.0 144.5,392.5 144.0,393.6 143.5,392.5 142.4,392.0 143.5,391.5" fill="#FBF7EA" opacity="0.18"/><polygon points="753.0,520.3 753.8,522.2 755.7,523.0 753.8,523.8 753.0,525.7 752.2,523.8 750.3,523.0 752.2,522.2" fill="#FBF7EA" opacity="0.30"/><polygon points="410.0,466.2 411.1,468.9 413.8,470.0 411.1,471.1 410.0,473.8 408.9,471.1 406.2,470.0 408.9,468.9" fill="#FBF7EA" opacity="0.42"/><polygon points="571.0,604.1 572.5,607.5 575.9,609.0 572.5,610.5 571.0,613.9 569.5,610.5 566.1,609.0 569.5,607.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1124.0,150.4 1124.5,151.5 1125.6,152.0 1124.5,152.5 1124.0,153.6 1123.5,152.5 1122.4,152.0 1123.5,151.5" fill="#FBF7EA" opacity="0.18"/><polygon points="893.0,40.3 893.8,42.2 895.7,43.0 893.8,43.8 893.0,45.7 892.2,43.8 890.3,43.0 892.2,42.2" fill="#FBF7EA" opacity="0.30"/><polygon points="830.0,206.2 831.1,208.9 833.8,210.0 831.1,211.1 830.0,213.8 828.9,211.1 826.2,210.0 828.9,208.9" fill="#FBF7EA" opacity="0.42"/><polygon points="431.0,84.1 432.5,87.5 435.9,89.0 432.5,90.5 431.0,93.9 429.5,90.5 426.1,89.0 429.5,87.5" fill="#FBF7EA" opacity="0.54"/><polygon points="704.0,510.4 704.5,511.5 705.6,512.0 704.5,512.5 704.0,513.6 703.5,512.5 702.4,512.0 703.5,511.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1033.0,60.3 1033.8,62.2 1035.7,63.0 1033.8,63.8 1033.0,65.7 1032.2,63.8 1030.3,63.0 1032.2,62.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1250.0,246.2 1251.1,248.9 1253.8,250.0 1251.1,251.1 1250.0,253.8 1248.9,251.1 1246.2,250.0 1248.9,248.9" fill="#FBF7EA" opacity="0.42"/><polygon points="291.0,164.1 292.5,167.5 295.9,169.0 292.5,170.5 291.0,173.9 289.5,170.5 286.1,169.0 289.5,167.5" fill="#FBF7EA" opacity="0.54"/><polygon points="284.0,670.4 284.5,671.5 285.6,672.0 284.5,672.5 284.0,673.6 283.5,672.5 282.4,672.0 283.5,671.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1173.0,380.3 1173.8,382.2 1175.7,383.0 1173.8,383.8 1173.0,385.7 1172.2,383.8 1170.3,383.0 1172.2,382.2" fill="#FBF7EA" opacity="0.30"/><polygon points="270.0,186.2 271.1,188.9 273.8,190.0 271.1,191.1 270.0,193.8 268.9,191.1 266.2,190.0 268.9,188.9" fill="#FBF7EA" opacity="0.42"/><polygon points="151.0,44.1 152.5,47.5 155.9,49.0 152.5,50.5 151.0,53.9 149.5,50.5 146.1,49.0 149.5,47.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1264.0,430.4 1264.5,431.5 1265.6,432.0 1264.5,432.5 1264.0,433.6 1263.5,432.5 1262.4,432.0 1263.5,431.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1313.0,600.3 1313.8,602.2 1315.7,603.0 1313.8,603.8 1313.0,605.7 1312.2,603.8 1310.3,603.0 1312.2,602.2" fill="#FBF7EA" opacity="0.30"/><polygon points="690.0,626.2 691.1,628.9 693.8,630.0 691.1,631.1 690.0,633.8 688.9,631.1 686.2,630.0 688.9,628.9" fill="#FBF7EA" opacity="0.42"/><polygon points="11.0,224.1 12.5,227.5 15.9,229.0 12.5,230.5 11.0,233.9 9.5,230.5 6.1,229.0 9.5,227.5" fill="#FBF7EA" opacity="0.54"/><polygon points="844.0,90.4 844.5,91.5 845.6,92.0 844.5,92.5 844.0,93.6 843.5,92.5 842.4,92.0 843.5,91.5" fill="#FBF7EA" opacity="0.18"/><polygon points="53.0,620.3 53.8,622.2 55.7,623.0 53.8,623.8 53.0,625.7 52.2,623.8 50.3,623.0 52.2,622.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1110.0,666.2 1111.1,668.9 1113.8,670.0 1111.1,671.1 1110.0,673.8 1108.9,671.1 1106.2,670.0 1108.9,668.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1271.0,304.1 1272.5,307.5 1275.9,309.0 1272.5,310.5 1271.0,313.9 1269.5,310.5 1266.1,309.0 1269.5,307.5" fill="#FBF7EA" opacity="0.54"/><polygon points="424.0,250.4 424.5,251.5 425.6,252.0 424.5,252.5 424.0,253.6 423.5,252.5 422.4,252.0 423.5,251.5" fill="#FBF7EA" opacity="0.18"/><polygon points="193.0,240.3 193.8,242.2 195.7,243.0 193.8,243.8 193.0,245.7 192.2,243.8 190.3,243.0 192.2,242.2" fill="#FBF7EA" opacity="0.30"/><polygon points="130.0,606.2 131.1,608.9 133.8,610.0 131.1,611.1 130.0,613.8 128.9,611.1 126.2,610.0 128.9,608.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1131.0,184.1 1132.5,187.5 1135.9,189.0 1132.5,190.5 1131.0,193.9 1129.5,190.5 1126.1,189.0 1129.5,187.5" fill="#FBF7EA" opacity="0.54"/><polygon points="4.0,10.4 4.5,11.5 5.6,12.0 4.5,12.5 4.0,13.6 3.5,12.5 2.4,12.0 3.5,11.5" fill="#FBF7EA" opacity="0.18"/><polygon points="333.0,460.3 333.8,462.2 335.7,463.0 333.8,463.8 333.0,465.7 332.2,463.8 330.3,463.0 332.2,462.2" fill="#FBF7EA" opacity="0.30"/><polygon points="550.0,346.2 551.1,348.9 553.8,350.0 551.1,351.1 550.0,353.8 548.9,351.1 546.2,350.0 548.9,348.9" fill="#FBF7EA" opacity="0.42"/><polygon points="991.0,364.1 992.5,367.5 995.9,369.0 992.5,370.5 991.0,373.9 989.5,370.5 986.1,369.0 989.5,367.5" fill="#FBF7EA" opacity="0.54"/><polygon points="984.0,370.4 984.5,371.5 985.6,372.0 984.5,372.5 984.0,373.6 983.5,372.5 982.4,372.0 983.5,371.5" fill="#FBF7EA" opacity="0.18"/><polygon points="473.0,480.3 473.8,482.2 475.7,483.0 473.8,483.8 473.0,485.7 472.2,483.8 470.3,483.0 472.2,482.2" fill="#FBF7EA" opacity="0.30"/><polygon points="970.0,386.2 971.1,388.9 973.8,390.0 971.1,391.1 970.0,393.8 968.9,391.1 966.2,390.0 968.9,388.9" fill="#FBF7EA" opacity="0.42"/><polygon points="851.0,444.1 852.5,447.5 855.9,449.0 852.5,450.5 851.0,453.9 849.5,450.5 846.1,449.0 849.5,447.5" fill="#FBF7EA" opacity="0.54"/><polygon points="564.0,530.4 564.5,531.5 565.6,532.0 564.5,532.5 564.0,533.6 563.5,532.5 562.4,532.0 563.5,531.5" fill="#FBF7EA" opacity="0.18"/><polygon points="613.0,100.3 613.8,102.2 615.7,103.0 613.8,103.8 613.0,105.7 612.2,103.8 610.3,103.0 612.2,102.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1390.0,326.2 1391.1,328.9 1393.8,330.0 1391.1,331.1 1390.0,333.8 1388.9,331.1 1386.2,330.0 1388.9,328.9" fill="#FBF7EA" opacity="0.42"/><polygon points="711.0,324.1 712.5,327.5 715.9,329.0 712.5,330.5 711.0,333.9 709.5,330.5 706.1,329.0 709.5,327.5" fill="#FBF7EA" opacity="0.54"/><polygon points="144.0,290.4 144.5,291.5 145.6,292.0 144.5,292.5 144.0,293.6 143.5,292.5 142.4,292.0 143.5,291.5" fill="#FBF7EA" opacity="0.18"/><polygon points="753.0,320.3 753.8,322.2 755.7,323.0 753.8,323.8 753.0,325.7 752.2,323.8 750.3,323.0 752.2,322.2" fill="#FBF7EA" opacity="0.30"/><polygon points="410.0,66.2 411.1,68.9 413.8,70.0 411.1,71.1 410.0,73.8 408.9,71.1 406.2,70.0 408.9,68.9" fill="#FBF7EA" opacity="0.42"/><polygon points="571.0,504.1 572.5,507.5 575.9,509.0 572.5,510.5 571.0,513.9 569.5,510.5 566.1,509.0 569.5,507.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1124.0,650.4 1124.5,651.5 1125.6,652.0 1124.5,652.5 1124.0,653.6 1123.5,652.5 1122.4,652.0 1123.5,651.5" fill="#FBF7EA" opacity="0.18"/><polygon points="893.0,340.3 893.8,342.2 895.7,343.0 893.8,343.8 893.0,345.7 892.2,343.8 890.3,343.0 892.2,342.2" fill="#FBF7EA" opacity="0.30"/><polygon points="830.0,106.2 831.1,108.9 833.8,110.0 831.1,111.1 830.0,113.8 828.9,111.1 826.2,110.0 828.9,108.9" fill="#FBF7EA" opacity="0.42"/><polygon points="431.0,584.1 432.5,587.5 435.9,589.0 432.5,590.5 431.0,593.9 429.5,590.5 426.1,589.0 429.5,587.5" fill="#FBF7EA" opacity="0.54"/><polygon points="704.0,110.4 704.5,111.5 705.6,112.0 704.5,112.5 704.0,113.6 703.5,112.5 702.4,112.0 703.5,111.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1033.0,660.3 1033.8,662.2 1035.7,663.0 1033.8,663.8 1033.0,665.7 1032.2,663.8 1030.3,663.0 1032.2,662.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1250.0,46.2 1251.1,48.9 1253.8,50.0 1251.1,51.1 1250.0,53.8 1248.9,51.1 1246.2,50.0 1248.9,48.9" fill="#FBF7EA" opacity="0.42"/><polygon points="291.0,464.1 292.5,467.5 295.9,469.0 292.5,470.5 291.0,473.9 289.5,470.5 286.1,469.0 289.5,467.5" fill="#FBF7EA" opacity="0.54"/><polygon points="284.0,570.4 284.5,571.5 285.6,572.0 284.5,572.5 284.0,573.6 283.5,572.5 282.4,572.0 283.5,571.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1173.0,180.3 1173.8,182.2 1175.7,183.0 1173.8,183.8 1173.0,185.7 1172.2,183.8 1170.3,183.0 1172.2,182.2" fill="#FBF7EA" opacity="0.30"/><polygon points="270.0,486.2 271.1,488.9 273.8,490.0 271.1,491.1 270.0,493.8 268.9,491.1 266.2,490.0 268.9,488.9" fill="#FBF7EA" opacity="0.42"/><polygon points="151.0,644.1 152.5,647.5 155.9,649.0 152.5,650.5 151.0,653.9 149.5,650.5 146.1,649.0 149.5,647.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1264.0,230.4 1264.5,231.5 1265.6,232.0 1264.5,232.5 1264.0,233.6 1263.5,232.5 1262.4,232.0 1263.5,231.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1313.0,200.3 1313.8,202.2 1315.7,203.0 1313.8,203.8 1313.0,205.7 1312.2,203.8 1310.3,203.0 1312.2,202.2" fill="#FBF7EA" opacity="0.30"/><polygon points="690.0,526.2 691.1,528.9 693.8,530.0 691.1,531.1 690.0,533.8 688.9,531.1 686.2,530.0 688.9,528.9" fill="#FBF7EA" opacity="0.42"/><polygon points="11.0,24.1 12.5,27.5 15.9,29.0 12.5,30.5 11.0,33.9 9.5,30.5 6.1,29.0 9.5,27.5" fill="#FBF7EA" opacity="0.54"/><polygon points="844.0,390.4 844.5,391.5 845.6,392.0 844.5,392.5 844.0,393.6 843.5,392.5 842.4,392.0 843.5,391.5" fill="#FBF7EA" opacity="0.18"/><polygon points="53.0,520.3 53.8,522.2 55.7,523.0 53.8,523.8 53.0,525.7 52.2,523.8 50.3,523.0 52.2,522.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1110.0,466.2 1111.1,468.9 1113.8,470.0 1111.1,471.1 1110.0,473.8 1108.9,471.1 1106.2,470.0 1108.9,468.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1271.0,604.1 1272.5,607.5 1275.9,609.0 1272.5,610.5 1271.0,613.9 1269.5,610.5 1266.1,609.0 1269.5,607.5" fill="#FBF7EA" opacity="0.54"/><polygon points="424.0,150.4 424.5,151.5 425.6,152.0 424.5,152.5 424.0,153.6 423.5,152.5 422.4,152.0 423.5,151.5" fill="#FBF7EA" opacity="0.18"/><polygon points="193.0,40.3 193.8,42.2 195.7,43.0 193.8,43.8 193.0,45.7 192.2,43.8 190.3,43.0 192.2,42.2" fill="#FBF7EA" opacity="0.30"/><polygon points="130.0,206.2 131.1,208.9 133.8,210.0 131.1,211.1 130.0,213.8 128.9,211.1 126.2,210.0 128.9,208.9" fill="#FBF7EA" opacity="0.42"/><polygon points="1131.0,84.1 1132.5,87.5 1135.9,89.0 1132.5,90.5 1131.0,93.9 1129.5,90.5 1126.1,89.0 1129.5,87.5" fill="#FBF7EA" opacity="0.54"/><polygon points="4.0,510.4 4.5,511.5 5.6,512.0 4.5,512.5 4.0,513.6 3.5,512.5 2.4,512.0 3.5,511.5" fill="#FBF7EA" opacity="0.18"/><polygon points="333.0,60.3 333.8,62.2 335.7,63.0 333.8,63.8 333.0,65.7 332.2,63.8 330.3,63.0 332.2,62.2" fill="#FBF7EA" opacity="0.30"/><polygon points="550.0,246.2 551.1,248.9 553.8,250.0 551.1,251.1 550.0,253.8 548.9,251.1 546.2,250.0 548.9,248.9" fill="#FBF7EA" opacity="0.42"/><polygon points="991.0,164.1 992.5,167.5 995.9,169.0 992.5,170.5 991.0,173.9 989.5,170.5 986.1,169.0 989.5,167.5" fill="#FBF7EA" opacity="0.54"/><polygon points="984.0,670.4 984.5,671.5 985.6,672.0 984.5,672.5 984.0,673.6 983.5,672.5 982.4,672.0 983.5,671.5" fill="#FBF7EA" opacity="0.18"/><polygon points="473.0,380.3 473.8,382.2 475.7,383.0 473.8,383.8 473.0,385.7 472.2,383.8 470.3,383.0 472.2,382.2" fill="#FBF7EA" opacity="0.30"/><polygon points="970.0,186.2 971.1,188.9 973.8,190.0 971.1,191.1 970.0,193.8 968.9,191.1 966.2,190.0 968.9,188.9" fill="#FBF7EA" opacity="0.42"/><polygon points="851.0,44.1 852.5,47.5 855.9,49.0 852.5,50.5 851.0,53.9 849.5,50.5 846.1,49.0 849.5,47.5" fill="#FBF7EA" opacity="0.54"/><polygon points="564.0,430.4 564.5,431.5 565.6,432.0 564.5,432.5 564.0,433.6 563.5,432.5 562.4,432.0 563.5,431.5" fill="#FBF7EA" opacity="0.18"/><polygon points="613.0,600.3 613.8,602.2 615.7,603.0 613.8,603.8 613.0,605.7 612.2,603.8 610.3,603.0 612.2,602.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1390.0,626.2 1391.1,628.9 1393.8,630.0 1391.1,631.1 1390.0,633.8 1388.9,631.1 1386.2,630.0 1388.9,628.9" fill="#FBF7EA" opacity="0.42"/><polygon points="711.0,224.1 712.5,227.5 715.9,229.0 712.5,230.5 711.0,233.9 709.5,230.5 706.1,229.0 709.5,227.5" fill="#FBF7EA" opacity="0.54"/><polygon points="144.0,90.4 144.5,91.5 145.6,92.0 144.5,92.5 144.0,93.6 143.5,92.5 142.4,92.0 143.5,91.5" fill="#FBF7EA" opacity="0.18"/><polygon points="753.0,620.3 753.8,622.2 755.7,623.0 753.8,623.8 753.0,625.7 752.2,623.8 750.3,623.0 752.2,622.2" fill="#FBF7EA" opacity="0.30"/><polygon points="410.0,666.2 411.1,668.9 413.8,670.0 411.1,671.1 410.0,673.8 408.9,671.1 406.2,670.0 408.9,668.9" fill="#FBF7EA" opacity="0.42"/><polygon points="571.0,304.1 572.5,307.5 575.9,309.0 572.5,310.5 571.0,313.9 569.5,310.5 566.1,309.0 569.5,307.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1124.0,250.4 1124.5,251.5 1125.6,252.0 1124.5,252.5 1124.0,253.6 1123.5,252.5 1122.4,252.0 1123.5,251.5" fill="#FBF7EA" opacity="0.18"/><polygon points="893.0,240.3 893.8,242.2 895.7,243.0 893.8,243.8 893.0,245.7 892.2,243.8 890.3,243.0 892.2,242.2" fill="#FBF7EA" opacity="0.30"/><polygon points="830.0,606.2 831.1,608.9 833.8,610.0 831.1,611.1 830.0,613.8 828.9,611.1 826.2,610.0 828.9,608.9" fill="#FBF7EA" opacity="0.42"/><polygon points="431.0,184.1 432.5,187.5 435.9,189.0 432.5,190.5 431.0,193.9 429.5,190.5 426.1,189.0 429.5,187.5" fill="#FBF7EA" opacity="0.54"/><polygon points="704.0,10.4 704.5,11.5 705.6,12.0 704.5,12.5 704.0,13.6 703.5,12.5 702.4,12.0 703.5,11.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1033.0,460.3 1033.8,462.2 1035.7,463.0 1033.8,463.8 1033.0,465.7 1032.2,463.8 1030.3,463.0 1032.2,462.2" fill="#FBF7EA" opacity="0.30"/><polygon points="1250.0,346.2 1251.1,348.9 1253.8,350.0 1251.1,351.1 1250.0,353.8 1248.9,351.1 1246.2,350.0 1248.9,348.9" fill="#FBF7EA" opacity="0.42"/><polygon points="291.0,364.1 292.5,367.5 295.9,369.0 292.5,370.5 291.0,373.9 289.5,370.5 286.1,369.0 289.5,367.5" fill="#FBF7EA" opacity="0.54"/><polygon points="284.0,370.4 284.5,371.5 285.6,372.0 284.5,372.5 284.0,373.6 283.5,372.5 282.4,372.0 283.5,371.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1173.0,480.3 1173.8,482.2 1175.7,483.0 1173.8,483.8 1173.0,485.7 1172.2,483.8 1170.3,483.0 1172.2,482.2" fill="#FBF7EA" opacity="0.30"/><polygon points="270.0,386.2 271.1,388.9 273.8,390.0 271.1,391.1 270.0,393.8 268.9,391.1 266.2,390.0 268.9,388.9" fill="#FBF7EA" opacity="0.42"/><polygon points="151.0,444.1 152.5,447.5 155.9,449.0 152.5,450.5 151.0,453.9 149.5,450.5 146.1,449.0 149.5,447.5" fill="#FBF7EA" opacity="0.54"/><polygon points="1264.0,530.4 1264.5,531.5 1265.6,532.0 1264.5,532.5 1264.0,533.6 1263.5,532.5 1262.4,532.0 1263.5,531.5" fill="#FBF7EA" opacity="0.18"/><polygon points="1313.0,100.3 1313.8,102.2 1315.7,103.0 1313.8,103.8 1313.0,105.7 1312.2,103.8 1310.3,103.0 1312.2,102.2" fill="#FBF7EA" opacity="0.30"/><polygon points="690.0,326.2 691.1,328.9 693.8,330.0 691.1,331.1 690.0,333.8 688.9,331.1 686.2,330.0 688.9,328.9" fill="#FBF7EA" opacity="0.42"/><polygon points="11.0,324.1 12.5,327.5 15.9,329.0 12.5,330.5 11.0,333.9 9.5,330.5 6.1,329.0 9.5,327.5" fill="#FBF7EA" opacity="0.54"/></svg>
+      <div class="container" style="text-align:center;position:relative">
+        <h2 style="color:var(--gold)">Our First 100</h2>
+        <ol class="pioneers"><li>Michele Atwater</li><li>Daniel Oestreich</li><li>Trond Nilsen</li><li>Erik Viirre</li><li>Alvin Graylin</li><li>Marty Perlmutter</li><li>Stacy Whittle</li><li>Amit</li><li>Dave Lorenzini</li><li>Olivier Maxted</li><li>Megan Selby</li><li>Ross Melville</li><li>Sanika Doolani</li><li>Joe Elliott</li><li>Tom Furness</li><li>Drew Stone</li><li>Alley Till</li><li>Rolando Masis-Obando</li><li>Damon Hernandez</li><li>Jules &amp; Oakley McVey</li><li>Moreen Branham</li><li>Cindy Douglas</li><li>Nicole Lincoln</li><li>Rae Maclemore</li><li>John Anderson</li><li>Jon Amiel</li><li>Mitch Abrams</li><li>Mark Billinghurst</li><li>David Sonnenschein</li><li>Jody Bresgi</li><li>Annie Goeke</li><li>Steve Lewis</li><li>Frank Marin</li><li>Chris Schiebel</li><li>John Williamson</li><li>Izabella Koontz</li><li>Allen Mostow</li><li>Steve Ball</li><li>Celeste Lear</li><li>Harry Kardis</li><li>Scott Rosseau</li><li>Natalia Pavlova</li><li>Jane Harrington</li><li>Hannah Misenar</li><li>Heimana Braun-Ortega</li><li>Gary London</li><li>Marilyn Cope</li><li>Lolita Perez Ayala</li><li>Arman Atoyan</li><li>James Hanusa</li><li>Orestis Spyrou</li><li>Maged Farrag</li><li>Yu Yuan</li><li>Jason Jerald</li><li>Dillinger James</li><li>Jeremy Dalton</li><li>Toni Emerson</li><li>Donna Dekkert Fontaine</li><li>Wilmont (Kamaunu) Kahaialii</li><li>Vasilisa Glauser</li><li>Doug Hohulin</li><li>Diane McClellan</li><li>Angelina Dayton Rinehart</li><li>Dace Campbell</li><li>Nicola Rosa</li><li>Louis Rosenberg</li><li>Noah Berlow</li><li>Kerri Norris</li><li>Patrick O'Shaughnessey</li><li>Natan Verkhovsky</li><li>Nick Rosa</li><li>Christopher Fonte</li><li>Bill Montgomery</li><li>Darius Clarke</li><li>Rohana Swihart</li><li>Ed Lantz</li><li>Alice Billman</li><li>Vida Ali</li><li>Art Giser</li><li>Aleshia Hayes</li><li>Aaron Clark</li><li>Jesus Daniel Hernandez</li><li>Brooke Ober</li><li>Ariana Fikki</li><li>Emily Olman</li><li>Jessica Outlaw</li><li>Ross Safronoff</li><li>Michelle Solon</li><li>Chao Dou</li><li>Jayd Swendseid</li><li>Ava Swendseid</li><li>Yun Rhee</li><li>Nathalie Bonin</li><li>Steven Van Loon</li><li>Greg Tarnacki</li><li>Bruce Wolcott</li><li>Sina Radi</li><li>Felipe Benítez</li><li>Marc Ratner</li><li>Nadia Ratner</li></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:12px"><img src="assets/luminara-mark.png" alt="" style="height:36px"><span>LUMINARA INSTITUTE OF LIGHT</span></div>
+          <p>A Washington nonprofit corporation · UBI 606 219 823<br>4939 NE 65th Street, Seattle, WA 98115<br><a href="mailto:info@luminara.institute">info@luminara.institute</a></p>
+          <p style="margin-top:12px">Contributions are received through the Virtual World Society, a 501(c)(3) organization.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a><a href="#divisions">Divisions</a><a href="#academy">The Light School</a><a href="#work">Watch Us Work</a><a href="#board">Board</a>
+        </div>
+        <div class="footer-links">
+          <a href="/charter">Founding Charter</a><a href="#join">Become a Pioneer</a>
+        </div>
+      </div>
+      <div class="legal">
+        <div>© 2026 Luminara Institute of Light · home of The Light School</div>
+        <div><em>Grow and Give Light</em></div>
+      </div>
     </div>
-  </div>
-  <div id="join" style="background:#030F58;color:#fff;padding:60px 48px;text-align:center">
-    <h2 style="font-size:28px;margin:0 0 10px">Become a Pioneer</h2>
-    <p style="font-size:15px;color:#c9d4ef;max-width:640px;margin:0 auto 24px;line-height:1.7">Subscribe to the newsletter, attend a session, join a program. Every Pioneer has a place to begin and a visible path forward.</p>
-    <div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 auto 26px;font-family:'Source Sans 3',sans-serif;font-size:12.5px;letter-spacing:0.04em">
-      <span style="border:1px solid #F4BE3B;color:#F4BE3B;padding:6px 14px;border-radius:2px">1 · Subscriber</span>
-      <span style="border:1px solid #F4BE3B;color:#F4BE3B;padding:6px 14px;border-radius:2px">2 · Attendee</span>
-      <span style="background:#F4BE3B;color:#030F58;padding:6px 14px;border-radius:2px;font-weight:700">3 · Pioneer</span>
-      <span style="border:1px solid #F4BE3B;color:#F4BE3B;padding:6px 14px;border-radius:2px">4 · Contributor</span>
-      <span style="border:1px solid #F4BE3B;color:#F4BE3B;padding:6px 14px;border-radius:2px">5 · Partner</span>
-    </div>
-    <a href="mailto:alley.till@luminara.institute" style="background:#F4BE3B;color:#030F58;padding:12px 30px;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:14px;letter-spacing:0.08em">GET STARTED</a>
-  </div>
-  <div style="background:#FBF7EA;border-top:1px solid #dcdff0;padding:26px 48px;font-family:'Source Sans 3',sans-serif;font-size:12.5px;color:#3a4370;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
-    <div>© 2026 Luminara Institute of Light · formerly The Light School</div>
-    <div><em>Grow and Give Light</em></div>
-    <div>Contributions are received through the Virtual World Society, a 501(c)(3) organization, until the institute's own exemption is granted.</div>
-  </div>
+  </footer>
 </div>
+
+<script>
+(function(){
+  var card=document.getElementById('hover-card'), row=document.getElementById('board-row'); if(!card||!row) return;
+  var dots=row.querySelectorAll('.dot'), current=null, timer=null;
+  function show(d){
+    var i=d.getAttribute('data-i'), t=document.getElementById('bio-'+i); if(!t) return;
+    clearTimeout(timer);
+    if(current===d && !card.hidden) return;
+    dots.forEach(function(x){x.setAttribute('aria-expanded','false')});
+    d.setAttribute('aria-expanded','true'); current=d;
+    card.innerHTML=''; card.appendChild(t.content.cloneNode(true));
+    var g=document.createElement('div'); g.className='gallery'; g.setAttribute('data-slug',t.getAttribute('data-slug')||''); card.appendChild(g);
+    card.hidden=false;
+  }
+  function hide(){timer=setTimeout(function(){card.hidden=true; if(current){current.setAttribute('aria-expanded','false');} current=null;},220)}
+  dots.forEach(function(d){
+    d.addEventListener('mouseenter',function(){show(d)});
+    d.addEventListener('focus',function(){show(d)});
+    d.addEventListener('mouseleave',hide);
+    d.addEventListener('click',function(){ if(current===d && !card.hidden){card.hidden=true;d.setAttribute('aria-expanded','false');current=null;} else {show(d);} });
+  });
+  card.addEventListener('mouseenter',function(){clearTimeout(timer)});
+  card.addEventListener('mouseleave',hide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!card.hidden){card.hidden=true;if(current){current.setAttribute('aria-expanded','false');current.focus();}current=null;}});
+  document.addEventListener('click',function(e){if(!card.hidden&&!card.contains(e.target)&&!row.contains(e.target)){card.hidden=true;if(current)current.setAttribute('aria-expanded','false');current=null;}});
+})();
+</script>
+
+<script>
+(function(){
+  var card=document.getElementById('ms-card'); if(!card) return;
+  var ms=document.querySelectorAll('.trajectory .ms'), current=null, timer=null;
+  function show(g){var i=g.getAttribute('data-i'), t=document.getElementById('ms-'+i); if(!t) return; clearTimeout(timer);
+    if(current===g && !card.hidden) return;
+    ms.forEach(function(x){x.setAttribute('aria-expanded','false')}); g.setAttribute('aria-expanded','true'); current=g;
+    card.innerHTML=''; card.appendChild(t.content.cloneNode(true)); card.style.borderTopColor=t.getAttribute('data-color'); card.hidden=false;}
+  function hide(){timer=setTimeout(function(){card.hidden=true; if(current)current.setAttribute('aria-expanded','false'); current=null;},260)}
+  ms.forEach(function(g){g.addEventListener('mouseenter',function(){show(g)}); g.addEventListener('focus',function(){show(g)}); g.addEventListener('mouseleave',hide);
+    g.addEventListener('click',function(){ if(current===g && !card.hidden){card.hidden=true;g.setAttribute('aria-expanded','false');current=null;} else show(g); });
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();g.click();}});});
+  card.addEventListener('mouseenter',function(){clearTimeout(timer)}); card.addEventListener('mouseleave',hide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!card.hidden){card.hidden=true;if(current){current.setAttribute('aria-expanded','false');current.focus();}current=null;}});
+})();
+</script>
 </x-dc>
 </body>
 </html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#F4BE3B;--royal:#0E398F;--midnight:#030F58;--bronze:#A86C17;--ivory:#FBF7EA;--ink:#111a4a;--muted:#3a4370;--line:#dcdff0;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.65;}
+  a{color:var(--royal);text-decoration:none;} a:hover{color:var(--midnight);text-decoration:underline;}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-weight:700;line-height:1.2;margin:0}
+  h1{font-size:clamp(36px,6vw,56px)} h2{font-size:clamp(26px,3.6vw,32px)} h3{font-size:20px}
+  p{margin:0}
+  .sans{font-family:'Source Sans 3',sans-serif}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:820px}
+  .eyebrow{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+  .lede{font-size:20px;line-height:1.6}
+  .muted{color:var(--muted)}
+  .small{font-size:15px}
+  section{padding:80px 0}
+  section+section{border-top:1px solid var(--line)}
+  .band{background:var(--ivory)}
+  .stack>*+*{margin-top:14px}
+  .btn{display:inline-block;font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:15px;letter-spacing:0.06em;padding:14px 30px;border-radius:2px;border:2px solid var(--gold);background:var(--gold);color:var(--midnight);text-decoration:none}
+  .btn:hover{filter:brightness(1.06);color:var(--midnight);text-decoration:none}
+  .btn.secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,0.7)}
+  .btn.secondary:hover{background:rgba(255,255,255,0.1);color:#fff}
+  .btn.small{padding:9px 18px;font-size:13px}
+  .site-header{position:sticky;top:0;z-index:10;background:var(--midnight);border-bottom:2px solid var(--midnight)}
+  .ribbon{display:flex;width:100%}
+  .ribbon a{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-align:center;color:#fff;text-decoration:none;border-right:2px solid var(--midnight);transition:filter .12s ease}
+  .ribbon a:last-child{border-right:0}
+  .ribbon a:hover{filter:brightness(1.12);text-decoration:none;color:inherit}
+  .ribbon a:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+  @media (max-width:760px){.ribbon{flex-wrap:wrap}.ribbon a{flex:1 1 33.33%;min-height:44px;font-size:12px;border-bottom:2px solid var(--midnight)}}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Source Sans 3',sans-serif;font-weight:700;letter-spacing:0.06em;color:var(--ink)}
+  .school-hero{position:relative;background:#030F58;border-bottom:3px double var(--gold)}
+  .school-photo{position:relative;height:clamp(420px,58vw,680px);overflow:hidden;background:#030F58}
+  .school-photo img{width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:grayscale(1) contrast(1.05);display:block}
+  .school-banner{position:absolute;left:0;right:0;bottom:0;background:rgba(251,247,234,0.96);border-top:3px double var(--gold);padding:22px 0 24px}
+  .school-banner .container{max-width:1360px;text-align:center}
+  .school-banner h2{font-size:clamp(22px,3vw,28px);margin-bottom:8px}
+  .school-banner p{max-width:none;font-size:15px;line-height:1.5}
+  .school-banner p+p{margin-top:10px}
+  @media (max-width:720px){.school-banner{position:static}.school-photo{height:52vw}}
+  .school-photo .sign{position:absolute;left:0;right:0;top:66%;transform:translateY(-50%);background:var(--gold);color:var(--midnight);font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.16em;text-transform:uppercase;text-align:center;padding:6px 0;border-top:3px double #D15B32;border-bottom:3px double #D15B32}
+  .board-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+  .dot{background:none;border:0;padding:0;margin:0;cursor:pointer;border-radius:50%}
+  .dot img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 30%;display:block;border:3px solid var(--gold);transition:transform .15s ease,border-color .15s ease}
+  .dot:hover img,.dot:focus-visible img,.dot[aria-expanded="true"] img{transform:scale(1.08);border-color:var(--royal)}
+  .dot:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .hover-card{margin:26px auto 0;max-width:820px;background:#fff;border:1px solid var(--line);border-top:6px solid var(--gold);box-shadow:0 22px 60px rgba(3,15,88,0.18);padding:28px 32px;display:grid;grid-template-columns:132px 1fr;gap:26px;align-items:start}
+  .hover-card[hidden]{display:none}
+  .hover-card .pimg{width:132px;height:132px;border-radius:50%;object-fit:cover;object-position:center 30%}
+  .hover-card h3{font-size:24px;margin-bottom:2px}
+  .hover-card .ptitle{font-family:'Source Sans 3',sans-serif;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze);margin-bottom:12px}
+  .hover-card p{font-size:16px;line-height:1.65}
+  .hover-card .gallery{grid-column:1 / -1;display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  .hover-card .gallery img{width:150px;height:100px;object-fit:cover;border:1px solid var(--line)}
+  @media (max-width:640px){.hover-card{grid-template-columns:1fr}.hover-card .pimg{margin:0 auto}}
+  .bars{display:flex;flex-direction:column;gap:18px}
+  .bar{display:grid;grid-template-columns:minmax(220px,34%) 1fr;gap:28px;align-items:center;padding:18px 28px;border:2px solid var(--midnight);min-height:72px}
+  .bar-name{font-weight:700;font-size:20px;line-height:1.2}
+  .bar-desc{font-size:15px;line-height:1.5;opacity:.95}
+  @media (max-width:640px){.bar{grid-template-columns:1fr;gap:6px}}
+  .cal-band{padding:48px 0 56px;background:#fff}
+  .cal-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+  .cal-month{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--bronze)}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);border:2px solid var(--midnight);border-top:0}
+  .cal-dow{background:var(--midnight);color:var(--ivory);font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;text-align:center;padding:8px 0}
+  .cal-cell{min-height:92px;padding:6px 8px 8px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+  .cal-cell:nth-child(7n+7){border-right:0}
+  .cal-cell.empty{background:#FBF7EA}
+  .cal-day{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--muted)}
+  .chip{display:block;font-family:'Source Sans 3',sans-serif;font-size:11.5px;line-height:1.3;padding:3px 6px;border-radius:2px;color:#fff;background:var(--royal)}
+  .chip.ls{background:#607A32} .chip.plf{background:#66508E} .chip.cc{background:#D15B32} .chip.all{background:var(--midnight)} .chip.ext{background:#FBF7EA;color:var(--ink);border:1px solid var(--line)}
+  .cal-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:'Source Sans 3',sans-serif;font-size:12.5px;color:var(--muted)}
+  .cal-legend span{display:inline-flex;align-items:center;gap:6px}
+  .cal-legend i.chip{width:14px;height:14px;padding:0;display:inline-block}
+  @media (max-width:720px){.cal-grid{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.cal-cell{min-height:64px;padding:4px}.chip{font-size:10px;padding:2px 3px}}
+  .work{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:32px}
+  .work-card{background:#fff;border:1px solid var(--line);border-top:10px solid var(--royal);padding:42px 40px 36px;display:flex;flex-direction:column;gap:14px;min-height:380px}
+  .work-card h3{font-size:30px}
+  .work-card .when{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze)}
+  .work-card .lead{font-size:16px;color:var(--muted)}
+  .work-card .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:15px}
+  .site-footer{background:var(--ivory);color:var(--muted);border-top:3px double var(--gold);padding:44px 0 30px;font-family:'Source Serif 4',Georgia,serif;font-size:15px}
+  .site-footer .footer-links,.site-footer .legal{font-family:'Source Sans 3',sans-serif;font-size:14px}
+  .site-footer a{color:var(--royal)} .site-footer .footer-links a{color:var(--ink)} .site-footer a:hover{color:var(--midnight)}
+  .site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+  @media (max-width:720px){.site-footer .cols{grid-template-columns:1fr}}
+  .site-footer .legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+  .site-footer .brand{color:var(--ink)}
+  .footer-links a{display:block;margin-bottom:8px}
+  .hero{background:linear-gradient(180deg,var(--midnight) 0%,var(--royal) 70%,#0E398F 100%);color:#fff;padding:120px 0 100px;text-align:center}
+  .hero h1{font-style:italic;max-width:900px;margin:0 auto}
+  .hero .tagline{font-size:clamp(18px,2.4vw,22px);font-style:italic;color:rgba(251,247,234,0.82);max-width:760px;margin:24px auto 0}
+  .hero .actions{margin-top:44px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .card{border-top:5px solid var(--royal);background:var(--ivory);padding:24px}
+  .card h3{margin-bottom:8px}
+  .card p{font-size:15px;line-height:1.6}
+  .two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px}
+  .person{display:flex;gap:16px;align-items:flex-start}
+  .person img{flex:none;width:80px;height:80px;border-radius:50%;object-fit:cover}
+  .person h3{font-size:18px;margin-bottom:2px}
+  .person .title{font-family:'Source Sans 3',sans-serif;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--bronze);margin-bottom:8px}
+  .person p{font-size:14px;line-height:1.6}
+  .steps{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:26px auto;font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.04em}
+  .steps span{border:1px solid var(--gold);color:var(--gold);padding:6px 14px;border-radius:2px}
+  .steps span.now{background:var(--gold);color:var(--midnight);font-weight:700}
+  .directory{border-top:1px solid var(--line)}
+  .directory .row{display:grid;grid-template-columns:240px 1fr 320px;gap:24px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+  .directory .role{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze);font-weight:700}
+  .directory .who{font-size:16px}
+  .directory .who span{color:var(--muted)}
+  .directory .mail{font-size:15px;text-align:right}
+  .directory .mail a{white-space:nowrap}
+  @media (max-width:800px){.directory .row{grid-template-columns:1fr;gap:4px}.directory .mail{text-align:left}}
+</style>
+<style>
+  .ribbon a[aria-current="page"]{box-shadow:inset 0 -6px 0 var(--gold)}
+  .div-hero{color:#FFFFFF;padding:96px 0 84px}
+  .div-hero .kicker{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;opacity:.9;margin-bottom:14px}
+  .div-hero h1{font-size:clamp(34px,5vw,54px);margin-bottom:14px}
+  .div-hero .tag{font-size:clamp(18px,2.2vw,22px);font-style:italic;opacity:.95}
+  .crumb{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.06em;color:var(--muted);margin-bottom:22px}
+</style>
+</helmet>
+<div style="min-height:100vh">
+  <header class="site-header">
+    <nav class="ribbon" aria-label="Divisions">
+      <a href="research.html" aria-current="page" title="Research" style="background:#1A6073">Research</a>
+      <a href="technology.html" title="Technology, AI &amp; Information Systems" style="background:#075BA8">Technology</a>
+      <a href="world-building.html" title="Experience Architecture &amp; World Building" style="background:#D15B32">World Building</a>
+      <a href="lumina-lingua.html" title="Lumina Lingua" style="background:#66508E">Lumina Lingua</a>
+      <a href="the-light-school.html" title="The Light School" style="background:#607A32">The Light School</a>
+      <a href="community-service.html" title="Community Service" style="background:#C58A32;color:#030F58">Community Service</a>
+    </nav>
+  </header>
+  <main id="top">
+    <div class="div-hero" style="background:#1A6073">
+      <div class="container">
+        <div class="kicker">A division of Luminara Institute of Light</div>
+        <h1>Research</h1>
+        <p class="tag">Discover what is true</p>
+      </div>
+    </div>
+    <section>
+      <div class="container narrow stack">
+        <div class="crumb"><a href="../Website%20Preview.dc.html">Luminara Institute of Light</a> · Research</div>
+        <p class="lede">Consciousness studies through social coherence: disciplined inquiry into the conditions, technologies, and experiences that support human potential, with methods published alongside findings.</p>
+        <p>Project HeartBeam, the institute's flagship inquiry, has Research as its accountable home, with every division contributing. It meets Mondays at 9:00 AM and Wednesdays at 5:00 PM Pacific; contact Drew Stone at <a href="mailto:drew.stone@luminara.institute">drew.stone@luminara.institute</a>.</p>
+        <p class="muted small">This page grows as the division's work is published. General inquiries: <a href="mailto:info@luminara.institute">info@luminara.institute</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <div class="brand" style="margin-bottom:12px"><img src="../assets/luminara-mark.png" alt="" style="height:36px"><span>LUMINARA INSTITUTE OF LIGHT</span></div>
+          <p>A Washington nonprofit corporation · UBI 606 219 823<br>4939 NE 65th Street, Seattle, WA 98115<br><a href="mailto:info@luminara.institute">info@luminara.institute</a></p>
+          <p style="margin-top:12px">Contributions are received through the Virtual World Society, a 501(c)(3) organization.</p>
+        </div>
+        <div class="footer-links">
+          <a href="../Website%20Preview.dc.html#about">About</a><a href="../Website%20Preview.dc.html#divisions">Divisions</a><a href="../Website%20Preview.dc.html#academy">The Light School</a><a href="../Website%20Preview.dc.html#work">Watch Us Work</a><a href="../Website%20Preview.dc.html#board">Board</a>
+        </div>
+        <div class="footer-links">
+          <a href="../Website%20Preview.dc.html#consortium">Consortium</a><a href="/charter">Founding Charter</a><a href="../Website%20Preview.dc.html#join">Become a Pioneer</a><a href="../Website%20Preview.dc.html#contact">Contact</a>
+        </div>
+      </div>
+      <div class="legal">
+        <div>© 2026 Luminara Institute of Light · home of The Light School</div>
+        <div><em>Grow and Give Light</em></div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
