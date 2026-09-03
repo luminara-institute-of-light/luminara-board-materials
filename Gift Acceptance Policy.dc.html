@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="./doc-page.js"></script>
 <style>
+  section.body{display:block}
+
   doc-page:not(:defined){visibility:hidden}
   body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
   doc-page{font-family:'Source Serif 4',Georgia,serif;}
@@ -25,8 +27,8 @@
   .filed{font-size:10.5px;color:#3a4370;}
 </style>
 </helmet>
-<doc-page>
-  <section class="page" style="padding:0.62in 0.72in;display:flex;flex-direction:column">
+<doc-page margin="1in">
+  <section class="body">
     <div style="border-bottom:3px double #F4BE3B;padding-bottom:11px;margin-bottom:11px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
       <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
       <h1 style="font-size:22px;font-weight:700;margin:0 0 5px">Gift Acceptance Policy</h1>
@@ -55,8 +57,9 @@
     <p>Every gift is logged on receipt. Written acknowledgment issues for any gift of $250 or more, and for any gift where the donor requests one; while the fiscal sponsorship is in effect, acknowledgments issue under the sponsorship arrangement. Gift records are retained under the Document Retention and Destruction Policy.</p>
     <h2>Adoption</h2>
     <p>Adopted as board policy by resolution of the Board of Directors on <span class="rule" style="width:170px"></span>, recorded in the minutes; reviewed annually with the policy review.</p>
-    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Called for by Bylaws Section 10.6; adopted under Resolution 14. Administered by the Treasurer. Filed with the corporate records.</p>
+    <p class="filed" style="border-top:1.5px solid #F4BE3B;padding-top:10px">Called for by Bylaws Section 10.6; adopted under Resolution 14. Administered by the Treasurer. Filed with the corporate records.</p>
   </section>
+<div slot="footer" style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;border-top:1px solid #F4BE3B;padding-top:7px;display:flex;justify-content:space-between"><span>Luminara Institute of Light</span><span>Gift Acceptance Policy</span></div>
 </doc-page>
 </x-dc>
 </body>

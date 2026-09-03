@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="./doc-page.js"></script>
 <style>
+  section.body{display:block}
+
   doc-page:not(:defined){visibility:hidden}
   body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
   doc-page{font-family:'Source Serif 4',Georgia,serif;}
@@ -23,22 +25,23 @@
   .filed{font-size:10.5px;color:#3a4370;}
 </style>
 </helmet>
-<doc-page>
-  <section class="page" style="padding:0.7in 0.78in;display:flex;flex-direction:column">
+<doc-page margin="1in">
+  <section class="body">
     <div style="border-bottom:3px double #F4BE3B;padding-bottom:11px;margin-bottom:12px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
       <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
       <h1 style="font-size:22px;font-weight:700;margin:0 0 5px">Banking Resolution</h1>
       <p style="font-size:12px;color:#3a4370;margin:0">Resolution of the Board of Directors designating the corporation's depository and its authorized signers, under Bylaws Sections 10.2 and 10.3.</p>
     </div>
-    <p style="margin-top:auto;position:relative;top:-27px"><strong>RESOLVED</strong>, that <span class="rule" style="width:280px"></span> , at which an account in the name of Luminara Institute of Light is already held, is designated a depository of the corporation; that the existing account is confirmed as an account of the corporation; and that the officers named below are authorized to maintain it, and the Treasurer to open further accounts there in the name of Luminara Institute of Light as directed by board resolution;</p>
+    <p style=""><strong>RESOLVED</strong>, that <span class="rule" style="width:280px"></span> , at which an account in the name of Luminara Institute of Light is already held, is designated a depository of the corporation; that the existing account is confirmed as an account of the corporation; and that the officers named below are authorized to maintain it, and the Treasurer to open further accounts there in the name of Luminara Institute of Light as directed by board resolution;</p>
     <p><strong>RESOLVED FURTHER</strong>, that the authorized signers on each such account are the Treasurer, Trond Nilsen, and the Chair of the Board, Thomas A. Furness III, as identified on the corporation's Certificate of Incumbency; that any one authorized signer may execute transactions up to the dual-authorization threshold of the Financial Controls Policy; and that any transaction above that threshold requires the authorization of both;</p>
     <p><strong>RESOLVED FURTHER</strong>, that the authorized signers may execute the depository's standard account agreements and signature cards on the corporation's behalf, provided nothing so executed enlarges the authority granted by this resolution or contradicts the corporation's bylaws or Financial Controls Policy;</p>
     <p><strong>RESOLVED FURTHER</strong>, that no account shall be opened at any depository not designated by board resolution, that online banking credentials remain personal to each named signer under the Financial Controls Policy, and that the board shall be notified of each account opened under this resolution at its next meeting;</p>
     <p><strong>RESOLVED FURTHER</strong>, that the Secretary is authorized to certify this resolution and the corporation's Certificate of Incumbency to the depository, which may rely on them until it receives written notice of amendment or revocation.</p>
     <h2>Adoption</h2>
     <p>Adopted by the Board of Directors on <span class="rule" style="width:170px"></span>, recorded in the minutes.</p>
-    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Presented to the depository with the Certificate of the Secretary and Certificate of Incumbency. Filed with corporate records.</p>
+    <p class="filed" style="border-top:1.5px solid #F4BE3B;padding-top:10px">Presented to the depository with the Certificate of the Secretary and Certificate of Incumbency. Filed with corporate records.</p>
   </section>
+<div slot="footer" style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;border-top:1px solid #F4BE3B;padding-top:7px;display:flex;justify-content:space-between"><span>Luminara Institute of Light</span><span>Banking Resolution</span></div>
 </doc-page>
 </x-dc>
 </body>

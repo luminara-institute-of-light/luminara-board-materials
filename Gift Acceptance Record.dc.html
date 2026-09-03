@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="./doc-page.js"></script>
 <style>
+  section.body{display:block}
+
   doc-page:not(:defined){visibility:hidden}
   body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
   doc-page{font-family:'Source Serif 4',Georgia,serif;}
@@ -29,12 +31,12 @@
   .box{display:inline-block;width:11px;height:11px;border:1.5px solid #111a4a;margin-right:7px;vertical-align:-1px;}
   .blank{display:inline-block;border-bottom:1px solid #9aa1c0;height:13px;}
   .letter p{font-size:13.5px;line-height:1.75;margin:0 0 14px;}
-  .lfoot{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#3a4370;text-align:center;border-top:1.5px solid #F4BE3B;padding-top:12px;margin-top:auto;}
+  .lfoot{font-family:'Source Sans 3',sans-serif;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#3a4370;text-align:center;border-top:1.5px solid #F4BE3B;padding-top:12px;}
   .filed{font-size:10.5px;color:#3a4370;}
 </style>
 </helmet>
-<doc-page>
-  <section class="page" style="padding:0.62in 0.7in;display:flex;flex-direction:column">
+<doc-page margin="1in">
+  <section class="body">
     <div style="border-bottom:3px double #F4BE3B;padding-bottom:10px;margin-bottom:11px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
       <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
       <h1 style="font-size:21px;font-weight:700;margin:0">Gift Acceptance Record</h1>
@@ -59,8 +61,9 @@
       <div><div class="sig"></div><p class="siglabel">Treasurer (or Chair, for a gift in which the Treasurer holds an interest)</p></div>
       <div><div class="sig"></div><p class="siglabel">Date</p></div>
     </div>
-    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Kept under the Gift Acceptance Policy; reported in the Treasurer's Report; retained with the financial records. The Letter of Gratitude and Letter of Declination are sent from their companion templates, and a copy of each sent letter files with this record. For a declined gift, record the specific reason here, never in the letter. The fiscal-sponsorship sentence in the Letter of Gratitude retires if and when the IRS issues a favorable determination letter; from that date the letter must add the written-acknowledgment statement federal law requires for gifts of $250 or more, including whether any goods or services were provided in exchange.</p>
+    <p class="filed" style="border-top:1.5px solid #F4BE3B;padding-top:10px">Kept under the Gift Acceptance Policy; reported in the Treasurer's Report; retained with the financial records. The Letter of Gratitude and Letter of Declination are sent from their companion templates, and a copy of each sent letter files with this record. For a declined gift, record the specific reason here, never in the letter. The fiscal-sponsorship sentence in the Letter of Gratitude retires if and when the IRS issues a favorable determination letter; from that date the letter must add the written-acknowledgment statement federal law requires for gifts of $250 or more, including whether any goods or services were provided in exchange.</p>
   </section>
+<div slot="footer" style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;border-top:1px solid #F4BE3B;padding-top:7px;display:flex;justify-content:space-between"><span>Luminara Institute of Light</span><span>Gift Acceptance Record</span></div>
 </doc-page>
 </x-dc>
 </body>

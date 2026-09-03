@@ -13,6 +13,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <script src="./doc-page.js"></script>
 <style>
+  section.body{display:block}
+
   doc-page:not(:defined){visibility:hidden}
   body{margin:0;font-family:'Source Serif 4',Georgia,serif;color:#111a4a;}
   doc-page{font-family:'Source Serif 4',Georgia,serif;}
@@ -28,8 +30,8 @@
   .filed{font-size:10.5px;color:#3a4370;}
 </style>
 </helmet>
-<doc-page>
-  <section class="page" style="padding:0.7in 0.78in;display:flex;flex-direction:column">
+<doc-page margin="1in">
+  <section class="body">
     <div style="border-bottom:3px double #F4BE3B;padding-bottom:11px;margin-bottom:12px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
       <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
       <h1 style="font-size:22px;font-weight:700;margin:0 0 5px">Certificate of Incumbency</h1>
@@ -52,10 +54,10 @@
       <div><div class="sig"></div><p class="siglabel">Michele Atwater, Secretary</p></div>
       <div><div class="sig"></div><p class="siglabel">Thomas A. Furness III, Chair</p><p class="siglabel" style="margin-top:2px;color:#8b92b3">Certifying the incumbency of the Secretary</p></div>
     </div>
-    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Issued fresh for each presentation; a copy of each issued certificate is filed with the corporate records.</p>
+    <p class="filed" style="border-top:1.5px solid #F4BE3B;padding-top:10px">Issued fresh for each presentation; a copy of each issued certificate is filed with the corporate records.</p>
   </section>
 
-  <section class="page" style="padding:0.7in 0.78in;display:flex;flex-direction:column">
+  <section class="body" style="break-before:page">
     <div style="border-bottom:3px double #F4BE3B;padding-bottom:11px;margin-bottom:12px;position:relative"><img src="assets/luminara-mark.png" alt="" style="position:absolute;right:0;top:14px;height:32px">
       <div class="kicker">Luminara Institute of Light · A Washington Nonprofit Corporation · UBI 606 219 823</div>
       <h1 style="font-size:22px;font-weight:700;margin:0 0 5px">Notarial Acknowledgment</h1>
@@ -71,8 +73,9 @@
       </div>
     </div>
     </div>
-    <p class="filed" style="margin-top:auto;border-top:1.5px solid #F4BE3B;padding-top:10px">Used when the receiving party requires notarization; otherwise omitted.</p>
+    <p class="filed" style="border-top:1.5px solid #F4BE3B;padding-top:10px">Used when the receiving party requires notarization; otherwise omitted.</p>
   </section>
+<div slot="footer" style="font-family:'Source Sans 3',sans-serif;font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:#3a4370;border-top:1px solid #F4BE3B;padding-top:7px;display:flex;justify-content:space-between"><span>Luminara Institute of Light</span><span>Certificate of Incumbency</span></div>
 </doc-page>
 </x-dc>
 </body>
