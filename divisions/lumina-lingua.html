@@ -158,6 +158,23 @@
   .cal-legend i.chip{background:var(--chip-color)!important;border-left:0!important;padding:0!important}
   @media (max-width:720px){.chip{font-size:11px!important;padding:2px 4px 2px 5px!important}}
   @media (prefers-reduced-motion:reduce){.ribbon a,.work-card,.div-hero::after,.div-hero .container{animation:none!important;transition:none!important}.ribbon a:hover,.work-card:hover{transform:none!important}}
+
+  /* site refresh 2026-09-14: folder-tab ribbon, header vignette, placeholder cards, week strip */
+  .ribbon a[aria-current="page"]{box-shadow:none!important;border-bottom-color:transparent!important;background-image:linear-gradient(180deg,rgba(3,15,88,0.26) 0%,rgba(3,15,88,0.26) 55%,rgba(3,15,88,0) 100%)!important;transform:none!important}
+  .div-hero{background-image:none!important}
+  .div-hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(3,15,88,0.36) 0%,rgba(3,15,88,0.24) 55%,rgba(3,15,88,0) 90%),radial-gradient(ellipse 140% 120% at 50% 0%,rgba(3,15,88,0) 55%,rgba(3,15,88,0.24) 100%);-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 64px);mask-image:linear-gradient(180deg,transparent 0,#000 64px)}
+  .div-hero .hero-lede{font-size:clamp(19px,1.9vw,21px);font-weight:700;line-height:1.5;max-width:560px;margin:6px 0 0}
+  .div-work{padding:56px 0 72px}
+  .space-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .space-card{aspect-ratio:1/1;border:2px dashed #C9CDE3;border-radius:4px;background:#FBF7EA;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#3A4370;transition:transform .25s ease,box-shadow .25s ease}
+  .space-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(3,15,88,.12)}
+  .week-strip{margin-top:44px;display:grid;grid-template-columns:repeat(7,1fr);border:2px solid #030F58;border-radius:2px;background:#fff}
+  .week-day{min-height:128px;padding:10px;border-right:1px solid #DCDFF0;display:flex;flex-direction:column;gap:8px}
+  .week-day:last-child{border-right:0}
+  .week-name{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#3A4370}
+  .week-slot{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;border:1px dashed #C9CDE3;border-radius:2px;font-family:'Source Sans 3',sans-serif;font-size:12px;color:#3A4370}
+  @media (max-width:900px){.space-grid{grid-template-columns:repeat(2,1fr)}.week-strip{grid-template-columns:repeat(7,minmax(96px,1fr));overflow-x:auto}}
+  @media (prefers-reduced-motion:reduce){.space-card{transition:none!important}.space-card:hover{transform:none!important}}
 </style>
 </helmet>
 <div style="min-height:100vh">
@@ -176,14 +193,30 @@
       <div class="container">
         <div class="kicker">A division of Luminara Institute of Light</div>
         <h1>Lumina Lingua</h1>
-        <p class="tag">Name the inner journey</p>
+        <p class="hero-lede">A new language of light, sound, movement, and form, carrying what ordinary speech cannot.</p>
       </div>
     </div>
-    <section>
-      <div class="container narrow stack">
-        <div class="crumb"><a href="../Website%20Preview.dc.html">Luminara Institute of Light</a> · Lumina Lingua</div>
-        <p class="lede">A new language of light, sound, movement, and form, carrying what ordinary speech cannot.</p>
-        
+    <section class="div-work">
+      <div class="container">
+        <div class="space-grid">
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+          <div class="space-card"><span>Space available</span></div>
+        </div>
+        <div class="week-strip" aria-label="This week">
+          <div class="week-day"><span class="week-name">Sun</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Mon</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Tue</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Wed</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Thu</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Fri</span><span class="week-slot">Space available</span></div>
+          <div class="week-day"><span class="week-name">Sat</span><span class="week-slot">Space available</span></div>
+        </div>
       </div>
     </section>
   </main>
