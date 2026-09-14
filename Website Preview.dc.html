@@ -99,13 +99,13 @@
   @media (max-width:720px){.cal-grid{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.cal-cell{min-height:64px;padding:4px}.chip{font-weight:700;font-size:19px;padding:2px 3px}}
   #work{background:var(--midnight);padding:56px 0 64px;border-top:0}
   #work .container{max-width:1440px}
-  .work{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-  .work-card{background:#fff;border:1px solid var(--line);border-top:10px solid var(--royal);padding:40px 44px 34px;display:flex;flex-direction:column;gap:14px;min-height:260px}
-  .work-card h3{font-size:30px;line-height:1.15}
+  .work{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .work-card{background:#fff;border:1px solid var(--line);border-top:8px solid var(--royal);padding:24px 24px 20px;display:flex;flex-direction:column;gap:10px;aspect-ratio:1/1}
+  .work-card h3{font-size:22px;line-height:1.2}
   .work-card .when{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bronze)}
-  .work-card p{font-size:16px;line-height:1.5;margin:0}
-  .work-card .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:15px}
-  @media (max-width:820px){.work{grid-template-columns:1fr}}
+  .work-card p{font-size:15px;line-height:1.5;margin:0}
+  .work-card .who{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;overflow-wrap:anywhere}
+  @media (max-width:820px){.work{grid-template-columns:repeat(2,1fr)}.work-card{aspect-ratio:auto}}
   .site-footer{background:var(--ivory);color:var(--muted);border-top:3px double var(--gold);padding:44px 0 30px;font-family:'Source Serif 4',Georgia,serif;font-size:15px}
   .site-footer .footer-links,.site-footer .legal{font-family:'Source Sans 3',sans-serif;font-size:14px}
   .site-footer a{color:var(--royal)} .site-footer .footer-links a{color:var(--ink)} .site-footer a:hover{color:var(--midnight)}
@@ -161,6 +161,7 @@
   .directory .mail{font-size:15px;text-align:right}
   .directory .mail a{white-space:nowrap}
   @media (max-width:800px){.directory .row{grid-template-columns:1fr;gap:4px}.directory .mail{text-align:left}}
+  @media (max-width:560px){.work{grid-template-columns:1fr}}
 </style>
 </helmet>
 <div style="min-height:100vh">
@@ -217,6 +218,17 @@
             <div class="when">Mondays 9:00 AM · Wednesdays 5:00 PM Pacific</div>
             <h3>Project HeartBeam</h3>
             <p>Run by the Research division.</p>
+            <div class="who"><a href="mailto:tom.furness@luminara.institute">tom.furness@luminara.institute</a></div>
+          </div>
+          <div class="work-card" style="border-top-color:#030F58;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#DCDFF0 130%)">
+            <div class="when">1st Tuesday · 12:00 PM Pacific</div>
+            <h3>All Hands</h3>
+            <div class="who"><a href="mailto:info@luminara.institute">info@luminara.institute</a></div>
+          </div>
+          <div class="work-card" style="border-top-color:#0E398F;background:radial-gradient(ellipse 80% 80% at 50% 45%,#fff 45%,#DCDFF0 130%)">
+            <div class="when">4th and 5th Tuesdays · 12:00 PM Pacific</div>
+            <h3>Office Hours</h3>
+            <p>With Tom Furness.</p>
             <div class="who"><a href="mailto:tom.furness@luminara.institute">tom.furness@luminara.institute</a></div>
           </div>
         </div>
