@@ -39,11 +39,11 @@
   .btn.small{padding:9px 18px;font-size:13px}
   .site-header{position:sticky;top:0;z-index:10;background:var(--midnight);border-bottom:2px solid var(--midnight)}
   .ribbon{display:flex;width:100%}
-  .ribbon a{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 8px;font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-align:center;color:#fff;text-decoration:none;border-right:2px solid var(--midnight);transition:filter .12s ease}
+  .ribbon a{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-height:52px;padding:10px 8px;font-family:'Source Sans 3',sans-serif;font-size:19px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;text-align:center;color:#fff;text-decoration:none;border-right:2px solid var(--midnight);transition:filter .12s ease}
   .ribbon a:last-child{border-right:0}
   .ribbon a:hover{filter:brightness(1.12);text-decoration:none;color:inherit}
   .ribbon a:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
-  @media (max-width:760px){.ribbon{flex-wrap:wrap}.ribbon a{flex:1 1 33.33%;min-height:44px;font-size:12px;border-bottom:2px solid var(--midnight)}}
+  @media (max-width:760px){.ribbon{flex-wrap:wrap}.ribbon a{font-weight:700;flex:1 1 33.33%;min-height:44px;font-size:19px;border-bottom:2px solid var(--midnight)}}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Source Sans 3',sans-serif;font-weight:700;letter-spacing:0.06em;color:var(--ink)}
   .school-hero{position:relative;background:#030F58;border-bottom:3px double var(--gold)}
   .school-photo{position:relative;height:clamp(420px,58vw,680px);overflow:hidden;background:#030F58}
@@ -54,7 +54,7 @@
   .school-banner p{max-width:none;font-size:15px;line-height:1.5}
   .school-banner p+p{margin-top:10px}
   @media (max-width:720px){.school-banner{position:static}.school-photo{height:52vw}}
-  .school-photo .sign{position:absolute;left:0;right:0;top:66%;transform:translateY(-50%);background:var(--gold);color:var(--midnight);font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.16em;text-transform:uppercase;text-align:center;padding:6px 0;border-top:3px double #D15B32;border-bottom:3px double #D15B32}
+  .school-photo .sign{position:absolute;left:0;right:0;top:66%;transform:translateY(-50%);background:var(--gold);color:var(--midnight);font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:20px;letter-spacing:0.16em;text-transform:uppercase;text-align:center;padding:6px 0;border-top:3px double #154D5C;border-bottom:3px double #154D5C}
   .board-row{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
   .dot{background:none;border:0;padding:0;margin:0;cursor:pointer;border-radius:50%}
   .dot img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:center 30%;display:block;border:3px solid var(--gold);transition:transform .15s ease,border-color .15s ease}
@@ -83,12 +83,12 @@
   .cal-cell:nth-child(7n+7){border-right:0}
   .cal-cell.empty{background:#FBF7EA}
   .cal-day{font-family:'Source Sans 3',sans-serif;font-size:12px;font-weight:700;color:var(--muted)}
-  .chip{display:block;font-family:'Source Sans 3',sans-serif;font-size:11.5px;line-height:1.3;padding:3px 6px;border-radius:2px;color:#fff;background:var(--royal)}
-  .chip.ls{background:#607A32} .chip.plf{background:#66508E} .chip.cc{background:#D15B32} .chip.all{background:var(--midnight)} .chip.ext{background:#FBF7EA;color:var(--ink);border:1px solid var(--line)}
+  .chip{font-weight:700;display:block;font-family:'Source Sans 3',sans-serif;font-size:19px;line-height:1.3;padding:3px 6px;border-radius:2px;color:#fff;background:var(--royal)}
+  .chip.ls{background:#D2A35E;color:#030F58} .chip.plf{background:#8A79A9} .chip.cc{background:#154D5C} .chip.all{background:var(--midnight)} .chip.ext{background:#FBF7EA;color:var(--ink);border:1px solid var(--line)}
   .cal-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-family:'Source Sans 3',sans-serif;font-size:12.5px;color:var(--muted)}
   .cal-legend span{display:inline-flex;align-items:center;gap:6px}
   .cal-legend i.chip{width:14px;height:14px;padding:0;display:inline-block}
-  @media (max-width:720px){.cal-grid{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.cal-cell{min-height:64px;padding:4px}.chip{font-size:10px;padding:2px 3px}}
+  @media (max-width:720px){.cal-grid{grid-template-columns:repeat(7,minmax(44px,1fr));overflow-x:auto}.cal-cell{min-height:64px;padding:4px}.chip{font-weight:700;font-size:19px;padding:2px 3px}}
   .work{display:grid;grid-template-columns:repeat(auto-fit,minmax(440px,1fr));gap:32px}
   .work-card{background:#fff;border:1px solid var(--line);border-top:10px solid var(--royal);padding:42px 40px 36px;display:flex;flex-direction:column;gap:14px;min-height:380px}
   .work-card h3{font-size:30px}
@@ -132,25 +132,25 @@
 <style>
   .ribbon a[aria-current="page"]{box-shadow:inset 0 -6px 0 var(--gold)}
   .div-hero{color:#FFFFFF;padding:96px 0 84px}
-  .div-hero .kicker{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.18em;text-transform:uppercase;opacity:.9;margin-bottom:14px}
+  .div-hero .kicker{font-family:'Source Sans 3',sans-serif;font-size:19px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:14px}
   .div-hero h1{font-size:clamp(34px,5vw,54px);margin-bottom:14px}
-  .div-hero .tag{font-size:clamp(18px,2.2vw,22px);font-style:italic;opacity:.95}
+  .div-hero .tag{font-size:clamp(19px,2.2vw,22px);font-weight:700;font-style:italic}
   .crumb{font-family:'Source Sans 3',sans-serif;font-size:13px;letter-spacing:0.06em;color:var(--muted);margin-bottom:22px}
 </style>
 </helmet>
 <div style="min-height:100vh">
   <header class="site-header">
     <nav class="ribbon" aria-label="Divisions">
-      <a href="research.html" aria-current="page" title="Research" style="background:#1A6073">Research</a>
-      <a href="technology.html" title="Technology, AI &amp; Information Systems" style="background:#075BA8">Technology</a>
-      <a href="world-building.html" title="Experience Architecture &amp; World Building" style="background:#D15B32">World Building</a>
-      <a href="lumina-lingua.html" title="Lumina Lingua" style="background:#66508E">Lumina Lingua</a>
-      <a href="the-light-school.html" title="The Light School" style="background:#607A32">The Light School</a>
-      <a href="community-service.html" title="Community Service" style="background:#C58A32;color:#030F58">Community Service</a>
+      <a href="research.html" aria-current="page" title="Research" style="background:#B34E2B">Research</a>
+      <a href="technology.html" title="Technology, AI &amp; Information Systems" style="background:#075AA6">Technology</a>
+      <a href="world-building.html" title="Experience Architecture" style="background:#154D5C">Experience Architecture</a>
+      <a href="lumina-lingua.html" title="Lumina Lingua" style="background:#8A79A9">Lumina Lingua</a>
+      <a href="the-light-school.html" title="The Light School" style="background:#D2A35E;color:#030F58">The Light School</a>
+      <a href="community-service.html" title="Community Service" style="background:#8A9D68;color:#030F58">Community Service</a>
     </nav>
   </header>
   <main id="top">
-    <div class="div-hero" style="background:#1A6073">
+    <div class="div-hero" style="background:#B34E2B">
       <div class="container">
         <div class="kicker">A division of Luminara Institute of Light</div>
         <h1>Research</h1>
@@ -161,7 +161,7 @@
       <div class="container narrow stack">
         <div class="crumb"><a href="../Website%20Preview.dc.html">Luminara Institute of Light</a> · Research</div>
         <p class="lede">Consciousness studies through social coherence: disciplined inquiry into the conditions, technologies, and experiences that support human potential, with methods published alongside findings.</p>
-        <p>Project HeartBeam, the institute's flagship inquiry, has Research as its accountable home, with every division contributing. It meets Mondays at 9:00 AM and Wednesdays at 5:00 PM Pacific; contact Drew Stone at <a href="mailto:drew.stone@luminara.institute">drew.stone@luminara.institute</a>.</p>
+        <p>Project HeartBeam, the institute's flagship inquiry, has Research as its accountable home, with every division contributing. It meets Mondays at 9:00 AM and Wednesdays at 5:00 PM Pacific; contact <a href="mailto:tom.furness@luminara.institute">tom.furness@luminara.institute</a>.</p>
         <p class="muted small">This page grows as the division's work is published. General inquiries: <a href="mailto:info@luminara.institute">info@luminara.institute</a>.</p>
       </div>
     </section>
